@@ -1,7 +1,7 @@
 #IOS Ingame Sdk Quick Start
 
 ##Introduction
-<hr/>
+
 
 This quick start shows you how to create a new iOS project, include the Ingame Mobile SDK.
 
@@ -10,7 +10,7 @@ This quick start shows you how to create a new iOS project, include the Ingame M
 * Deployment target of 6.0 or higher
 
 ##Creating a new project
-<hr/>
+
 
 In this step, we'll create a brand new project in Xcode. If you don't already have Xcode running, go ahead and open it now.
 
@@ -35,7 +35,7 @@ Select a location for your project, and click Create to finish creating a new pr
 To use a simulator, navigate to **Product > Destination** and select an iPhone simulator. Then select **Product > Run** to verify your app builds and runs. The app shows just a blank white screen for now. But don't worry, we'll add content in the next steps.
 
 ##Adding the SDK to your Xcode project
-<hr/>
+
 ###Using the SDK download
 
 If you don't already have the Ingame Mobile SDK, grab it from the downloads page<link to ios SDK github> and unzip it.
@@ -121,7 +121,7 @@ Replace or add this code to our **Appdelegate** on function **onpenURL**
 ```
 
 ##How to init the SDK
-<hr/>
+
 
 In project navigation choose **ViewController.m**, this is **RootViewControler** of our Application and init IngameSDK
 
@@ -160,7 +160,7 @@ Rebuild and run your project. You'll see after screen, you did init success inga
 ![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame%20iOS/ios-quickstart-17_zpsko54zmm0.png)
 
 ##Make payment on your Application
-<hr/>
+
 
 Add this code when you will call to payment of Ingame SDK
 ```sh
