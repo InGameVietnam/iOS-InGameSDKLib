@@ -1,0 +1,506 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9EBBA3741AB2883600A6AD00 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EBBA3731AB2883600A6AD00 /* main.m */; };
+		9EBBA3771AB2883600A6AD00 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EBBA3761AB2883600A6AD00 /* AppDelegate.m */; };
+		9EBBA37A1AB2883600A6AD00 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EBBA3791AB2883600A6AD00 /* ViewController.m */; };
+		9EBBA37D1AB2883600A6AD00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EBBA37B1AB2883600A6AD00 /* Main.storyboard */; };
+		9EBBA37F1AB2883600A6AD00 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EBBA37E1AB2883600A6AD00 /* Images.xcassets */; };
+		9EBBA3821AB2883600A6AD00 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EBBA3801AB2883600A6AD00 /* LaunchScreen.xib */; };
+		9EBBA38E1AB2883600A6AD00 /* IngameSDKExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EBBA38D1AB2883600A6AD00 /* IngameSDKExampleTests.m */; };
+		9EBBA3991AB28FA500A6AD00 /* libInGameSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBBA3981AB28FA500A6AD00 /* libInGameSDK.a */; };
+		9EBBA39B1AB2942F00A6AD00 /* INGResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9EBBA39A1AB2942F00A6AD00 /* INGResources.bundle */; };
+		9EBBA3B31AB2985300A6AD00 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBBA3B21AB2985300A6AD00 /* FacebookSDK.framework */; };
+		9EBBA3B51AB2985E00A6AD00 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBBA3B41AB2985E00A6AD00 /* SystemConfiguration.framework */; };
+		9EBBA3B71AB2987D00A6AD00 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBBA3B61AB2987D00A6AD00 /* StoreKit.framework */; };
+		9EBBA3B91AB2989100A6AD00 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBBA3B81AB2989100A6AD00 /* libz.dylib */; };
+		9EBBA3BB1AB298A600A6AD00 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBBA3BA1AB298A600A6AD00 /* MobileCoreServices.framework */; };
+		9EBBA3BD1AB299D200A6AD00 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBBA3BC1AB299D200A6AD00 /* MessageUI.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9EBBA3881AB2883600A6AD00 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9EBBA3661AB2883600A6AD00 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9EBBA36D1AB2883600A6AD00;
+			remoteInfo = IngameSDKExample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9EBBA36E1AB2883600A6AD00 /* IngameSDKExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IngameSDKExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9EBBA3721AB2883600A6AD00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9EBBA3731AB2883600A6AD00 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9EBBA3751AB2883600A6AD00 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9EBBA3761AB2883600A6AD00 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9EBBA3781AB2883600A6AD00 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		9EBBA3791AB2883600A6AD00 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9EBBA37C1AB2883600A6AD00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9EBBA37E1AB2883600A6AD00 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9EBBA3811AB2883600A6AD00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		9EBBA3871AB2883600A6AD00 /* IngameSDKExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IngameSDKExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9EBBA38C1AB2883600A6AD00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9EBBA38D1AB2883600A6AD00 /* IngameSDKExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IngameSDKExampleTests.m; sourceTree = "<group>"; };
+		9EBBA3981AB28FA500A6AD00 /* libInGameSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libInGameSDK.a; path = IngameSDKExample/IngameSDK/libInGameSDK.a; sourceTree = "<group>"; };
+		9EBBA39A1AB2942F00A6AD00 /* INGResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = INGResources.bundle; path = IngameSDKExample/IngameSDK/INGResources.bundle; sourceTree = "<group>"; };
+		9EBBA3AF1AB2981600A6AD00 /* IngameButtonBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IngameButtonBoard.h; sourceTree = "<group>"; };
+		9EBBA3B01AB2981600A6AD00 /* InGameSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InGameSDK.h; sourceTree = "<group>"; };
+		9EBBA3B11AB2981600A6AD00 /* SDKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDKViewController.h; sourceTree = "<group>"; };
+		9EBBA3B21AB2985300A6AD00 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
+		9EBBA3B41AB2985E00A6AD00 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		9EBBA3B61AB2987D00A6AD00 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		9EBBA3B81AB2989100A6AD00 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		9EBBA3BA1AB298A600A6AD00 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		9EBBA3BC1AB299D200A6AD00 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		9EBBA3BE1AB2CD7700A6AD00 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		9EBBA3C01AB2D2A200A6AD00 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		9EBBA3C21AB2D2AE00A6AD00 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9EBBA36B1AB2883600A6AD00 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9EBBA3BD1AB299D200A6AD00 /* MessageUI.framework in Frameworks */,
+				9EBBA3BB1AB298A600A6AD00 /* MobileCoreServices.framework in Frameworks */,
+				9EBBA3B91AB2989100A6AD00 /* libz.dylib in Frameworks */,
+				9EBBA3B71AB2987D00A6AD00 /* StoreKit.framework in Frameworks */,
+				9EBBA3B51AB2985E00A6AD00 /* SystemConfiguration.framework in Frameworks */,
+				9EBBA3B31AB2985300A6AD00 /* FacebookSDK.framework in Frameworks */,
+				9EBBA3991AB28FA500A6AD00 /* libInGameSDK.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9EBBA3841AB2883600A6AD00 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9EBBA3651AB2883600A6AD00 = {
+			isa = PBXGroup;
+			children = (
+				9EBBA3C21AB2D2AE00A6AD00 /* CoreTelephony.framework */,
+				9EBBA3C01AB2D2A200A6AD00 /* AVFoundation.framework */,
+				9EBBA3BE1AB2CD7700A6AD00 /* CFNetwork.framework */,
+				9EBBA3BC1AB299D200A6AD00 /* MessageUI.framework */,
+				9EBBA3BA1AB298A600A6AD00 /* MobileCoreServices.framework */,
+				9EBBA3B81AB2989100A6AD00 /* libz.dylib */,
+				9EBBA3B61AB2987D00A6AD00 /* StoreKit.framework */,
+				9EBBA3B41AB2985E00A6AD00 /* SystemConfiguration.framework */,
+				9EBBA3B21AB2985300A6AD00 /* FacebookSDK.framework */,
+				9EBBA3AE1AB2981600A6AD00 /* InGameSDK */,
+				9EBBA39A1AB2942F00A6AD00 /* INGResources.bundle */,
+				9EBBA3981AB28FA500A6AD00 /* libInGameSDK.a */,
+				9EBBA3701AB2883600A6AD00 /* IngameSDKExample */,
+				9EBBA38A1AB2883600A6AD00 /* IngameSDKExampleTests */,
+				9EBBA36F1AB2883600A6AD00 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9EBBA36F1AB2883600A6AD00 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9EBBA36E1AB2883600A6AD00 /* IngameSDKExample.app */,
+				9EBBA3871AB2883600A6AD00 /* IngameSDKExampleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9EBBA3701AB2883600A6AD00 /* IngameSDKExample */ = {
+			isa = PBXGroup;
+			children = (
+				9EBBA3751AB2883600A6AD00 /* AppDelegate.h */,
+				9EBBA3761AB2883600A6AD00 /* AppDelegate.m */,
+				9EBBA3781AB2883600A6AD00 /* ViewController.h */,
+				9EBBA3791AB2883600A6AD00 /* ViewController.m */,
+				9EBBA37B1AB2883600A6AD00 /* Main.storyboard */,
+				9EBBA37E1AB2883600A6AD00 /* Images.xcassets */,
+				9EBBA3801AB2883600A6AD00 /* LaunchScreen.xib */,
+				9EBBA3711AB2883600A6AD00 /* Supporting Files */,
+			);
+			path = IngameSDKExample;
+			sourceTree = "<group>";
+		};
+		9EBBA3711AB2883600A6AD00 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9EBBA3721AB2883600A6AD00 /* Info.plist */,
+				9EBBA3731AB2883600A6AD00 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9EBBA38A1AB2883600A6AD00 /* IngameSDKExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				9EBBA38D1AB2883600A6AD00 /* IngameSDKExampleTests.m */,
+				9EBBA38B1AB2883600A6AD00 /* Supporting Files */,
+			);
+			path = IngameSDKExampleTests;
+			sourceTree = "<group>";
+		};
+		9EBBA38B1AB2883600A6AD00 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9EBBA38C1AB2883600A6AD00 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9EBBA3AE1AB2981600A6AD00 /* InGameSDK */ = {
+			isa = PBXGroup;
+			children = (
+				9EBBA3AF1AB2981600A6AD00 /* IngameButtonBoard.h */,
+				9EBBA3B01AB2981600A6AD00 /* InGameSDK.h */,
+				9EBBA3B11AB2981600A6AD00 /* SDKViewController.h */,
+			);
+			name = InGameSDK;
+			path = IngameSDKExample/IngameSDK/include/InGameSDK;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9EBBA36D1AB2883600A6AD00 /* IngameSDKExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9EBBA3911AB2883600A6AD00 /* Build configuration list for PBXNativeTarget "IngameSDKExample" */;
+			buildPhases = (
+				9EBBA36A1AB2883600A6AD00 /* Sources */,
+				9EBBA36B1AB2883600A6AD00 /* Frameworks */,
+				9EBBA36C1AB2883600A6AD00 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IngameSDKExample;
+			productName = IngameSDKExample;
+			productReference = 9EBBA36E1AB2883600A6AD00 /* IngameSDKExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9EBBA3861AB2883600A6AD00 /* IngameSDKExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9EBBA3941AB2883600A6AD00 /* Build configuration list for PBXNativeTarget "IngameSDKExampleTests" */;
+			buildPhases = (
+				9EBBA3831AB2883600A6AD00 /* Sources */,
+				9EBBA3841AB2883600A6AD00 /* Frameworks */,
+				9EBBA3851AB2883600A6AD00 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9EBBA3891AB2883600A6AD00 /* PBXTargetDependency */,
+			);
+			name = IngameSDKExampleTests;
+			productName = IngameSDKExampleTests;
+			productReference = 9EBBA3871AB2883600A6AD00 /* IngameSDKExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9EBBA3661AB2883600A6AD00 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = "Quoc Tran Cong";
+				TargetAttributes = {
+					9EBBA36D1AB2883600A6AD00 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					9EBBA3861AB2883600A6AD00 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 9EBBA36D1AB2883600A6AD00;
+					};
+				};
+			};
+			buildConfigurationList = 9EBBA3691AB2883600A6AD00 /* Build configuration list for PBXProject "IngameSDKExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9EBBA3651AB2883600A6AD00;
+			productRefGroup = 9EBBA36F1AB2883600A6AD00 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9EBBA36D1AB2883600A6AD00 /* IngameSDKExample */,
+				9EBBA3861AB2883600A6AD00 /* IngameSDKExampleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9EBBA36C1AB2883600A6AD00 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9EBBA39B1AB2942F00A6AD00 /* INGResources.bundle in Resources */,
+				9EBBA37D1AB2883600A6AD00 /* Main.storyboard in Resources */,
+				9EBBA3821AB2883600A6AD00 /* LaunchScreen.xib in Resources */,
+				9EBBA37F1AB2883600A6AD00 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9EBBA3851AB2883600A6AD00 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9EBBA36A1AB2883600A6AD00 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9EBBA37A1AB2883600A6AD00 /* ViewController.m in Sources */,
+				9EBBA3771AB2883600A6AD00 /* AppDelegate.m in Sources */,
+				9EBBA3741AB2883600A6AD00 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9EBBA3831AB2883600A6AD00 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9EBBA38E1AB2883600A6AD00 /* IngameSDKExampleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9EBBA3891AB2883600A6AD00 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9EBBA36D1AB2883600A6AD00 /* IngameSDKExample */;
+			targetProxy = 9EBBA3881AB2883600A6AD00 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9EBBA37B1AB2883600A6AD00 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9EBBA37C1AB2883600A6AD00 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9EBBA3801AB2883600A6AD00 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9EBBA3811AB2883600A6AD00 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9EBBA38F1AB2883600A6AD00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9EBBA3901AB2883600A6AD00 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9EBBA3921AB2883600A6AD00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/quoctc/Documents/FacebookSDK,
+				);
+				INFOPLIST_FILE = IngameSDKExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/IngameSDKExample/IngameSDK",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "arm64 armv7 armv7s";
+			};
+			name = Debug;
+		};
+		9EBBA3931AB2883600A6AD00 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/quoctc/Documents/FacebookSDK,
+				);
+				INFOPLIST_FILE = IngameSDKExample/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/IngameSDKExample/IngameSDK",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "arm64 armv7 armv7s";
+			};
+			name = Release;
+		};
+		9EBBA3951AB2883600A6AD00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = IngameSDKExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IngameSDKExample.app/IngameSDKExample";
+			};
+			name = Debug;
+		};
+		9EBBA3961AB2883600A6AD00 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = IngameSDKExampleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IngameSDKExample.app/IngameSDKExample";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9EBBA3691AB2883600A6AD00 /* Build configuration list for PBXProject "IngameSDKExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9EBBA38F1AB2883600A6AD00 /* Debug */,
+				9EBBA3901AB2883600A6AD00 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9EBBA3911AB2883600A6AD00 /* Build configuration list for PBXNativeTarget "IngameSDKExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9EBBA3921AB2883600A6AD00 /* Debug */,
+				9EBBA3931AB2883600A6AD00 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9EBBA3941AB2883600A6AD00 /* Build configuration list for PBXNativeTarget "IngameSDKExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9EBBA3951AB2883600A6AD00 /* Debug */,
+				9EBBA3961AB2883600A6AD00 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9EBBA3661AB2883600A6AD00 /* Project object */;
+}
