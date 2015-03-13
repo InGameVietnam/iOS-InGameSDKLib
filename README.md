@@ -157,7 +157,7 @@ Add **Status bar is initially hidden** with value **YES** and **View controller-
 
 Rebuild and run your project. You'll see after screen, you did init success ingameSDK. If not, please contact IngameSDK developer team to get Support
 
-![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame%20iOS/ios-quickstart-17_zpsko54zmm0.png)
+![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame%20iOS/iOS%20Simulator%20Screen%20Shot%20Mar%2013%202015%202.13.34%20PM_zpsue3bvzhv.png)
 
 ##Make payment on your Application
 
