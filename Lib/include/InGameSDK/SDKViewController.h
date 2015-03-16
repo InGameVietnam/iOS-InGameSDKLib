@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "IngameButtonBoard.h"
+#import "UserInfor.h"
 
 @class SDKViewController;             //define class, so protocol can see MyClass
 @protocol SDKViewControllerDelegate <NSObject>   //define delegate protocol
@@ -15,13 +15,23 @@
 - (void) adjustViewsForOrientation: (UIInterfaceOrientation) orientation;
 @end //end protocol
 
-@interface SDKViewController : UIViewController<IngameButtonBoardDelegate> {
+
+@protocol IngameSDKDelegate <NSObject>
+
+@optional
+- (void) onUserLoginSuccess:(UserInfor*) userInfo;
+- (void) onUserLogoutSuccess:(UserInfor*) userInfo;
+
+@end
+
+@interface SDKViewController : UIViewController {
     UIViewController* mainview;
 }
 
 + (id) getInstance;
 
 @property (nonatomic, weak) id <SDKViewControllerDelegate> delegate; //define MyClassDelegate as delegate
+@property (nonatomic, weak) id <IngameSDKDelegate> IGDelegate; //define MyClassDelegate as delegate
 
 @property (weak, nonatomic) IBOutlet UIView *containerLarge;
 @property (weak, nonatomic) IBOutlet UIView *containerSmall;
