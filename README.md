@@ -183,10 +183,13 @@ Replace or add this code to our **Appdelegate** on function **onpenURL**
 
 ##How to init the SDK
 
+Replace your **AppID** and **AppKey** at **IngameSDK/SDKConfig.h** in your xcode project navigation
+
+![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame%20iOS/D3310A7FD895DD57CBA68D9EA59F1A273BF583E34ED088D643pimgpsh_fullsize_distr.jpg_zpsty7eqgpo.png)
 
 In project navigation choose **ViewController.m**, this is **RootViewControler** of our Application and init IngameSDK
 
-first Import IngameSDK
+Import IngameSDK
 ```sh
 #import "SDKViewController.h"
 ```
@@ -202,8 +205,25 @@ SDKViewController *sdkIngame = [[SDKViewController getInstance] initWithMainView
 The quickest way to add a reference is to open up **ViewController.m**, import the library.
 
 If you init your **RootViewController** in **Appdelegate**
-
-![add](http://s757.photobucket.com/albums/xx212/ichirokudo/Ingame%20iOS/ios-quickstart-14_zpshp8yfasa.png)
+```sh
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    // Override point for customization after application launch.
+    MainView *viewController = [[MainView alloc] initWithNibName:@"MainView" bundle:nil];
+    //UINavigationController *navigation = [[UINavigationController alloc]initWithRootViewController:viewController];
+    self.window.rootViewController = viewController;
+    
+    SDKViewController *sdkIngame = [[SDKViewController getInstance] initWithMainView:viewController];
+    [sdkIngame setGameCallbackURL:@"www.yourCallbackURL.example.com"];
+    // set a delegate for callbacks
+    sdkIngame.IGDelegate = viewController;
+    
+    [self.window makeKeyAndVisible];
+    return YES;
+}
+```
 
 ####The last
 #####Hide status bar
