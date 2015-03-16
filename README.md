@@ -275,12 +275,12 @@ Each of the methods in IGDelegate are marked as optional, so you only need to im
     NSLog(@"Main view callback User:%@ is Logout",[userInfo getUserName]);
 }
 ```
->Through the **userInfo** variable you can get account information by calling the following functions:
->userInfo.getUserName(): Username
->userInfo.getUserId(): Account ID
->userInfo.getAccessToken(): Access token
->userInfo.getEmail(): Email
->userInfo.getPhone(): Phone number 
+>Through the **userInfo** variable you can get account information by calling the following functions:<br/>
+userInfo.getUserName(): Username<br/>
+userInfo.getUserId(): Account ID<br/>
+userInfo.getAccessToken(): Access token<br/>
+userInfo.getEmail(): Email<br/>
+userInfo.getPhone(): Phone number<br/>
 
 License
 ----
