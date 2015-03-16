@@ -234,8 +234,47 @@ Example:
 ```
 ![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame%20iOS/8486A7B418373FAD9E398B82AD5A197282B4CA23B04438F647pimgpsh_fullsize_distr.jpg_zpsqaihwotg.png)
 
-##What's next
-To learn about [Getting callbacks from IngameSDKDelegate](abc)
+##IngameSKDDelegate implementation
+
+To register for Ingame SDK events, set the delegate property on a Viewcontroller to an object that implements the **IGDelegate** protocol. Generally, the class that implements Ingame SDK will also act as the delegate class, in which case the delegate property can be set to **self** or a **viewController**.
+
+```sh
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    // Override point for customization after application launch.
+    MainView *viewController = [[MainView alloc] initWithNibName:@"MainView" bundle:nil];
+    //UINavigationController *navigation = [[UINavigationController alloc]initWithRootViewController:viewController];
+    self.window.rootViewController = viewController;
+    
+    SDKViewController *sdkIngame = [[SDKViewController getInstance] initWithMainView:viewController];
+    [sdkIngame setGameCallbackURL:@"www.yourCallbackURL.example.com"];
+    // set a delegate for callbacks
+    sdkIngame.IGDelegate = viewController;
+    
+    [self.window makeKeyAndVisible];
+    return YES;
+}
+```
+```sh
+@interface MainView : UIViewController <IngameSDKDelegate>
+
+@end
+```
+
+###Implementing login, logout events
+
+Each of the methods in IGDelegate are marked as optional, so you only need to implement the methods you want. This example implements each method and logs a message to the console.
+```sh
+- (void) onUserLoginSuccess:(UserInfor *)userInfo {
+    NSLog(@"Main view callback User:%@ is Login",[userInfo getUserName]);
+}
+
+- (void) onUserLogoutSuccess:(UserInfor *)userInfo {
+    NSLog(@"Main view callback User:%@ is Logout",[userInfo getUserName]);
+}
+```
 License
 ----
 Ingame Developer Team
