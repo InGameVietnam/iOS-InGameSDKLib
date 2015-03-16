@@ -46,6 +46,8 @@ If you don't already have the Ingame Mobile SDK, grab it from the [downloads pag
 
 First copy the library folder to your ios project navigation
 
+![add](http://s757.photobucket.com/albums/xx212/ichirokudo/Ingame%20iOS/ios-quickstart-03_zpsunwmsc7f.png)
+
 ![add](http://s757.photobucket.com/albums/xx212/ichirokudo/Ingame%20iOS/ios-quickstart-04_zpsstzczgzb.png)
 
 Second go to **IngameSDKExample project navigation > Build Phases > Link Binary With Libraries** click **Add > Add Others**
@@ -231,6 +233,9 @@ Example:
 }
 ```
 ![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame%20iOS/8486A7B418373FAD9E398B82AD5A197282B4CA23B04438F647pimgpsh_fullsize_distr.jpg_zpsqaihwotg.png)
+
+##What's next
+To learn about [Getting callbacks from IngameSDKDelegate](abc)
 License
 ----
 Ingame Developer Team
