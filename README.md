@@ -275,6 +275,13 @@ Each of the methods in IGDelegate are marked as optional, so you only need to im
     NSLog(@"Main view callback User:%@ is Logout",[userInfo getUserName]);
 }
 ```
+>Through the **userInfo** variable you can get account information by calling the following functions:
+>userInfo.getUserName(): Username
+>userInfo.getUserId(): Account ID
+>userInfo.getAccessToken(): Access token
+>userInfo.getEmail(): Email
+>userInfo.getPhone(): Phone number 
+
 License
 ----
 Ingame Developer Team
