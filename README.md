@@ -230,7 +230,7 @@ Example:
     [[SDKViewController getInstance] showPaymentWithOrder:@"YourGameOrderID"];
 }
 ```
-![add](http://s757.photobucket.com/albums/xx212/ichirokudo/Ingame%20iOS/ios-quickstart-18_zps4ag7lv7j.png)
+![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame%20iOS/8486A7B418373FAD9E398B82AD5A197282B4CA23B04438F647pimgpsh_fullsize_distr.jpg_zpsqaihwotg.png)
 License
 ----
 Ingame Developer Team
