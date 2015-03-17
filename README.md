@@ -66,6 +66,8 @@ The SDK depends on the following iOS development frameworks which may not alread
 * MobileCoreServices
 * libz.dylib
 * SystemConfiguration
+* CFNetwork
+* StoreKit
 
 ####Add IngameSDK Resources to project
 
