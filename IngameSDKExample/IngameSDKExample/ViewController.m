@@ -22,7 +22,9 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     //init ingame SDK on rootviewcontroller
-    SDKViewController *sdkIngame = [[SDKViewController getInstance] initWithMainView:self];
+    NSString* deviceID = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+    NSLog(@"getted device ID: %@",deviceID);
+    SDKViewController *sdkIngame = [[SDKViewController getInstance] initWithMainView:self forDevice:deviceID];
     //set your callback url
     [sdkIngame setGameCallbackURL:@"www.yourcallbackURL.com"];
 }
