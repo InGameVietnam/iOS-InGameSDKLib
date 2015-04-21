@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9E841E3D1AE4BDE000EAD906 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E841E3C1AE4BDE000EAD906 /* AdSupport.framework */; };
 		9EBBA3741AB2883600A6AD00 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EBBA3731AB2883600A6AD00 /* main.m */; };
 		9EBBA3771AB2883600A6AD00 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EBBA3761AB2883600A6AD00 /* AppDelegate.m */; };
 		9EBBA37A1AB2883600A6AD00 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EBBA3791AB2883600A6AD00 /* ViewController.m */; };
@@ -36,7 +35,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9E841E3C1AE4BDE000EAD906 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		9EBB797F1AB6D9A700944D21 /* SDKConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDKConfig.h; sourceTree = "<group>"; };
 		9EBB79801AB6D9A700944D21 /* SDKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDKViewController.h; sourceTree = "<group>"; };
 		9EBB79811AB6D9A700944D21 /* UserInfor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfor.h; sourceTree = "<group>"; };
@@ -71,7 +69,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E841E3D1AE4BDE000EAD906 /* AdSupport.framework in Frameworks */,
 				9EBBA3BD1AB299D200A6AD00 /* MessageUI.framework in Frameworks */,
 				9EBBA3BB1AB298A600A6AD00 /* MobileCoreServices.framework in Frameworks */,
 				9EBBA3B91AB2989100A6AD00 /* libz.dylib in Frameworks */,
@@ -95,7 +92,6 @@
 		9EBBA3651AB2883600A6AD00 = {
 			isa = PBXGroup;
 			children = (
-				9E841E3C1AE4BDE000EAD906 /* AdSupport.framework */,
 				9EBBA3C21AB2D2AE00A6AD00 /* CoreTelephony.framework */,
 				9EBBA3C01AB2D2A200A6AD00 /* AVFoundation.framework */,
 				9EBBA3BE1AB2CD7700A6AD00 /* CFNetwork.framework */,
