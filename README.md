@@ -69,7 +69,6 @@ The SDK depends on the following iOS development frameworks which may not alread
 * CFNetwork
 * StoreKit
 * Security
-* AdSupport
 
 ####Add IngameSDK Resources to project
 
