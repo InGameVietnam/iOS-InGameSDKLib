@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "UserInfor.h"
+#import "AppsFlyerTracker.h"
 
 @class SDKViewController;             //define class, so protocol can see MyClass
 @protocol SDKViewControllerDelegate <NSObject>   //define delegate protocol
@@ -24,7 +25,7 @@
 
 @end
 
-@interface SDKViewController : UIViewController {
+@interface SDKViewController : UIViewController<AppsFlyerTrackerDelegate> {
     UIViewController* mainview;
 }
 
@@ -39,6 +40,7 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *containerSmallScroolView;
 
 - (id) initWithMainView:(UIViewController*) _mainview;
+- (void) enableSandbox;
 
 - (void) setGameCallbackURL:(NSString*) urlString;
 
@@ -61,5 +63,6 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightConstrainsLargeView;
 
 - (void) moveButtonToCenter;
+- (void) onTapLogin;
 
 @end

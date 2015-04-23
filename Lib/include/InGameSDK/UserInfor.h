@@ -11,6 +11,7 @@
 @interface UserInfor : NSObject 
 
 @property (strong, nonatomic) NSString* username;
+@property int userId;
 @property (strong, nonatomic) NSString* password;
 @property (strong, nonatomic) NSString* email;
 @property (strong, nonatomic) NSString* phone;
@@ -25,7 +26,7 @@
 
 - (NSString*) getUserName;
 - (NSString*) getPassWord;
-- (NSString*) getUserId;
+- (int) getUserId;
 - (NSString*) getAccessToken;
 - (NSString*) getEmail;
 - (NSString*) getPhone;

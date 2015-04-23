@@ -16,4 +16,7 @@
 //for itune inappurchase -  get from itunes
 #define ITC_CONTENT_PROVIDER_SHARED_SECRET  @"cd41028cb7a24f2c979d3c01a27495af"
 
+#define APPFLYER_DEV_ID @"ekymUhihizGufaXWaeH5nn"
+#define APPLE_APP_ID @"964731893"
+
 #endif
