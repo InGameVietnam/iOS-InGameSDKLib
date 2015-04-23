@@ -8,9 +8,6 @@
 
 #import "ViewController.h"
 
-//import ingameSDK
-#import "SDKViewController.h"
-
 @interface ViewController ()
 
 @end
@@ -25,6 +22,9 @@
     NSString* deviceID = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
     NSLog(@"getted device ID: %@",deviceID);
     SDKViewController *sdkIngame = [[SDKViewController getInstance] initWithMainView:self];
+    // set a delegate for callbacks
+    sdkIngame.IGDelegate = self;
+    
     //set your callback url
     [sdkIngame setGameCallbackURL:@"www.yourcallbackURL.com"];
 }
@@ -32,6 +32,16 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma IGSDKDelegate
+- (void) onUserLoginSuccess:(UserInfor*) userInfo {
+    NSLog(@"UserName: %@",[userInfo getUserName]);
+    NSLog(@"UserId: %d",[userInfo getUserId]);
+}
+
+- (void) onUserLogoutSuccess:(UserInfor*) userInfo {
+    
 }
 
 @end

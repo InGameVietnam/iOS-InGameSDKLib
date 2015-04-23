@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SDKViewController.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<IngameSDKDelegate>
 
 
 @end

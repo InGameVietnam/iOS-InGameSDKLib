@@ -51,8 +51,8 @@
 		9EBBA3871AB2883600A6AD00 /* IngameSDKExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IngameSDKExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EBBA38C1AB2883600A6AD00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9EBBA38D1AB2883600A6AD00 /* IngameSDKExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IngameSDKExampleTests.m; sourceTree = "<group>"; };
-		9EBBA3981AB28FA500A6AD00 /* libInGameSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libInGameSDK.a; path = IngameSDKExample/IngameSDK/libInGameSDK.a; sourceTree = "<group>"; };
-		9EBBA39A1AB2942F00A6AD00 /* INGResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = INGResources.bundle; path = IngameSDKExample/IngameSDK/INGResources.bundle; sourceTree = "<group>"; };
+		9EBBA3981AB28FA500A6AD00 /* libInGameSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libInGameSDK.a; path = ../../libInGameSDK.a; sourceTree = "<group>"; };
+		9EBBA39A1AB2942F00A6AD00 /* INGResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = INGResources.bundle; path = ../../INGResources.bundle; sourceTree = "<group>"; };
 		9EBBA3B21AB2985300A6AD00 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		9EBBA3B41AB2985E00A6AD00 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		9EBBA3B61AB2987D00A6AD00 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -89,7 +89,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9EBBA3651AB2883600A6AD00 = {
+		9E614F711AE8A7CE002D4CD7 /* FrameWorks */ = {
 			isa = PBXGroup;
 			children = (
 				9EBBA3C21AB2D2AE00A6AD00 /* CoreTelephony.framework */,
@@ -101,9 +101,15 @@
 				9EBBA3B61AB2987D00A6AD00 /* StoreKit.framework */,
 				9EBBA3B41AB2985E00A6AD00 /* SystemConfiguration.framework */,
 				9EBBA3B21AB2985300A6AD00 /* FacebookSDK.framework */,
+			);
+			name = FrameWorks;
+			sourceTree = "<group>";
+		};
+		9EBBA3651AB2883600A6AD00 = {
+			isa = PBXGroup;
+			children = (
+				9E614F711AE8A7CE002D4CD7 /* FrameWorks */,
 				9EBBA3AE1AB2981600A6AD00 /* InGameSDK */,
-				9EBBA39A1AB2942F00A6AD00 /* INGResources.bundle */,
-				9EBBA3981AB28FA500A6AD00 /* libInGameSDK.a */,
 				9EBBA3701AB2883600A6AD00 /* IngameSDKExample */,
 				9EBBA38A1AB2883600A6AD00 /* IngameSDKExampleTests */,
 				9EBBA36F1AB2883600A6AD00 /* Products */,
@@ -163,6 +169,8 @@
 		9EBBA3AE1AB2981600A6AD00 /* InGameSDK */ = {
 			isa = PBXGroup;
 			children = (
+				9EBBA39A1AB2942F00A6AD00 /* INGResources.bundle */,
+				9EBBA3981AB28FA500A6AD00 /* libInGameSDK.a */,
 				9EBB797F1AB6D9A700944D21 /* SDKConfig.h */,
 				9EBB79801AB6D9A700944D21 /* SDKViewController.h */,
 				9EBB79811AB6D9A700944D21 /* UserInfor.h */,
