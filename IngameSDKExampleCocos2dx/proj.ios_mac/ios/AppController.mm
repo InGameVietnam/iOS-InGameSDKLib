@@ -157,7 +157,6 @@ static AppDelegate s_sharedApplication;
     return wasHandled;
 }
 
-
 #pragma mark -
 #pragma mark Memory management
 
