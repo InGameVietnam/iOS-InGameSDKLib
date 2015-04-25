@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>B27FF4D6-E626-4A31-9013-416ECE234A1D</string>
+	<key>IDESourceControlProjectName</key>
+	<string>IngameSDKExampleCocos2dx</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>BA057936CE3EBAE29C69D3994D6EC25C6131C332</key>
+		<string>https://github.com/InGameVietnam/iOS-InGameSDKLib.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>IngameSDKExampleCocos2dx/proj.ios_mac/IngameSDKExampleCocos2dx.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>BA057936CE3EBAE29C69D3994D6EC25C6131C332</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/InGameVietnam/iOS-InGameSDKLib.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>BA057936CE3EBAE29C69D3994D6EC25C6131C332</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>BA057936CE3EBAE29C69D3994D6EC25C6131C332</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iOS-InGameSDKLib</string>
+		</dict>
+	</array>
+</dict>
+</plist>

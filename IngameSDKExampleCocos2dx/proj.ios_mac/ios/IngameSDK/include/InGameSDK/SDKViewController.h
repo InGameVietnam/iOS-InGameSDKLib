@@ -22,11 +22,12 @@
 @optional
 - (void) onUserLoginSuccess:(UserInfor*) userInfo;
 - (void) onUserLogoutSuccess:(UserInfor*) userInfo;
+- (void) onCloseSDKUI;
 
 @end
 
 @interface SDKViewController : UIViewController<AppsFlyerTrackerDelegate> {
-    UIViewController* mainview;
+    UIViewController* _rootview;
 }
 
 + (id) getInstance;
