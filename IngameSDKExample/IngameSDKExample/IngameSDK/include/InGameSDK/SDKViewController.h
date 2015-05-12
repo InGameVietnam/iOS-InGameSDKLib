@@ -41,12 +41,12 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *containerSmallScroolView;
 
 - (id) initWithMainView:(UIViewController*) _mainview;
-- (void) enableSandbox;
 
 - (void) setGameCallbackURL:(NSString*) urlString;
 
 //- (void) showLoginOnView:(UIViewController*) mainView enableQuiclogin:(BOOL) enableQuicklogin;
 - (void) showUserInfoOnView:(UIViewController*) mainView;
+- (void) onShareFacebook;
 - (void) showSDKView:(UIViewController*) mainView;
 - (void) showCaptchaView;
 - (void) showPaymentWithOrder:(NSString*) gameOrder;
@@ -56,6 +56,7 @@
 - (void) onLoginSuccessWithUserName:(NSString *)username andPassWord:(NSString *)password;
 - (void) close;
 - (void) closeWithErrors;
+- (void) startAppFlyerTracking;
 
 @property (strong, nonatomic) IBOutlet UILabel *LB_HelloUser;
 @property (strong, nonatomic) IBOutlet UIButton *BT_Login;
