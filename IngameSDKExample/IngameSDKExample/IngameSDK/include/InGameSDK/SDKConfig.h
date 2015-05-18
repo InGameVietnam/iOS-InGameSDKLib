@@ -10,8 +10,8 @@
 #define InGameSDK_SDKConfig_h
 
 //get from Ingame Developer Support website
-#define APPID   @"ebfb4b7bcbdbb1cd6fe9737e01362b7c"
-#define APPKEY  @"c5b217196d6d1ad04f0cde74b4b883d9"
+#define APPID   @"f5f4e46f022771c650e17b17a20c453a"
+#define APPKEY  @"383c92ec3d5aea80993d469b5ed017c9"
 
 //for itune inappurchase -  get from itunes
 #define ITC_CONTENT_PROVIDER_SHARED_SECRET  @"cd41028cb7a24f2c979d3c01a27495af"

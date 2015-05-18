@@ -50,6 +50,7 @@
 - (void) showSDKView:(UIViewController*) mainView;
 - (void) showCaptchaView;
 - (void) showPaymentWithOrder:(NSString*) gameOrder;
+- (void) showMoreGame;
 
 - (void) onUserLogoutCallback;
 - (void) onUserLoginFailCallback;
