@@ -23,6 +23,7 @@
 - (void) onUserLoginSuccess:(UserInfor*) userInfo;
 - (void) onUserLogoutSuccess:(UserInfor*) userInfo;
 - (void) onCloseSDKUI;
+- (void) onGetFacebookFriendListSuccess:(NSMutableArray*) friendlist;
 
 @end
 
@@ -43,14 +44,13 @@
 - (id) initWithMainView:(UIViewController*) _mainview;
 
 - (void) setGameCallbackURL:(NSString*) urlString;
-
-//- (void) showLoginOnView:(UIViewController*) mainView enableQuiclogin:(BOOL) enableQuicklogin;
 - (void) showUserInfoOnView:(UIViewController*) mainView;
 - (void) onShareFacebook;
 - (void) showSDKView:(UIViewController*) mainView;
 - (void) showCaptchaView;
 - (void) showPaymentWithOrder:(NSString*) gameOrder;
 - (void) showMoreGame;
+- (void) getFacebookFriendList;
 
 - (void) onUserLogoutCallback;
 - (void) onUserLoginFailCallback;
@@ -59,13 +59,12 @@
 - (void) closeWithErrors;
 - (void) startAppFlyerTracking;
 
-@property (strong, nonatomic) IBOutlet UILabel *LB_HelloUser;
-@property (strong, nonatomic) IBOutlet UIButton *BT_Login;
-
 @property (strong, nonatomic) UIActivityIndicatorView *spinner;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightConstrainsLargeView;
 
 - (void) moveButtonToCenter;
 - (void) onTapLogin;
+
+- (void) onGetFacebookFriendListSuccess:(NSMutableArray*) friendlist;
 
 @end

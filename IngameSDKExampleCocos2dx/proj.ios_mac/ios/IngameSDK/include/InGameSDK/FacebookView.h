@@ -10,6 +10,11 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import "SDKViewController.h"
 
+//@protocol FacebookViewDelegate <NSObject>   //define delegate protocol
+//    - (void) onGetFacebookFriendListSuccess:(NSMutableArray*) friendlist;
+//@end //end protocol
+
+
 @interface FacebookView : UIViewController<SDKViewControllerDelegate,UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate> {
     SDKViewController* mainView;
     UIScrollView* containerView;
@@ -29,6 +34,8 @@
 
 - (void) setSDKViewController:(SDKViewController*) sdkViewController;
 
+//@property (nonatomic, weak) id <FacebookViewDelegate> fbdelegate; //define MyClassDelegate as delegate
+
 @property (weak, nonatomic) IBOutlet UITableView *TB_FriendList;
 @property (weak, nonatomic) IBOutlet UITextView *TV_FriendSelected;
 @property (weak, nonatomic) IBOutlet UIButton *BT_Share;
@@ -38,5 +45,6 @@
 
 //- (void) getFacebookFriendList;
 
+- (void) requestFacebookFriendList;
 
 @end
