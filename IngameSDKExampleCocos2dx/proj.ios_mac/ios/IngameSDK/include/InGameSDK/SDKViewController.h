@@ -41,7 +41,9 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *containerLargeScrollView;
 @property (weak, nonatomic) IBOutlet UIScrollView *containerSmallScroolView;
 
-- (id) initWithMainView:(UIViewController*) _mainview;
+//- (id) initWithMainView:(UIViewController*) _mainview;
+
+- (void) setMainView:(UIViewController*) _mainview;
 
 - (void) setGameCallbackURL:(NSString*) urlString;
 - (void) showUserInfoOnView:(UIViewController*) mainView;

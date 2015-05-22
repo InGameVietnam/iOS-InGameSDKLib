@@ -19,9 +19,10 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     //init ingame SDK on rootviewcontroller
-    NSString* deviceID = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
-    NSLog(@"getted device ID: %@",deviceID);
-    SDKViewController *sdkIngame = [[SDKViewController getInstance] initWithMainView:self];
+    //NSString* deviceID = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+    //NSLog(@"getted device ID: %@",deviceID);
+    SDKViewController *sdkIngame = [SDKViewController getInstance];
+    [sdkIngame setMainView:self];
     // set a delegate for callbacks
     sdkIngame.IGDelegate = self;
     

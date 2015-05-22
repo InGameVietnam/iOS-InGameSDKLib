@@ -19,4 +19,9 @@
 #define APPFLYER_DEV_ID @"ekymUhihizGufaXWaeH5nn"
 #define APPLE_APP_ID @"964731893"
 
+//user for facebook share
+#define FBShareLink @"https://developers.facebook.com/ios"
+#define FBShareName @"Ingame SDK for iOS"
+#define FBShareCaption @"build apps."
+
 #endif

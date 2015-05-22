@@ -94,7 +94,8 @@ static AppDelegate s_sharedApplication;
 
     //init IngameSDK Viewcontroller
     //init ingame SDK on rootviewcontroller
-    SDKViewController *sdkIngame = [[SDKViewController getInstance] initWithMainView:_viewController];
+    SDKViewController *sdkIngame = [SDKViewController getInstance];
+    [sdkIngame setMainView:_viewController];
     //set your callback url
     [sdkIngame setGameCallbackURL:@"www.example.YourCallbackURL.com"];
     
