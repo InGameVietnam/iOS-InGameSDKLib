@@ -138,7 +138,8 @@ Import IngameSDK
 and after init IngameSDK on **ViewDidLoad** function
 ```sh
 //init ingame SDK on rootviewcontroller
-SDKViewController *sdkIngame = [[SDKViewController getInstance] initWithMainView:self];
+SDKViewController *sdkIngame = [SDKViewController getInstance];
+[sdkIngame  setMainView:self]
 //set your callback url
 [sdkIngame setGameCallbackURL:@"www.example.YourCallbackURL.com"];
 ```
