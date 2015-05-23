@@ -142,7 +142,7 @@ SDKViewController *sdkIngame = [[SDKViewController getInstance] initWithMainView
 //set your callback url
 [sdkIngame setGameCallbackURL:@"www.example.YourCallbackURL.com"];
 ```
-![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame%20iOS/ios-quickstart-13_zpsxtkxudru.png)
+![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame%20iOS/Screen%20Shot%202015-05-23%20at%2011.57.34%20AM_zpsp70bks5g.png)
 
 The quickest way to add a reference is to open up **ViewController.m**, import the library.
 
