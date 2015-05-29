@@ -61,6 +61,9 @@
 - (void) closeWithErrors;
 - (void) startAppFlyerTracking;
 
+- (void) onLogout;
+- (void) onLogin;
+
 @property (strong, nonatomic) UIActivityIndicatorView *spinner;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightConstrainsLargeView;
 

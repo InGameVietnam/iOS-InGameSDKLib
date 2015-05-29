@@ -32,6 +32,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)onTapLogout:(id)sender {
+    [[SDKViewController getInstance] onLogout];
+}
+
 #pragma IGSDKDelegate
 - (void) onUserLoginSuccess:(UserInfor*) userInfo {
     NSLog(@"UserName: %@",[userInfo getUserName]);
