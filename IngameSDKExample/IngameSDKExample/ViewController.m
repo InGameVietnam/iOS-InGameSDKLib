@@ -42,6 +42,11 @@
     NSLog(@"UserId: %d",[userInfo getUserId]);
 }
 
+- (void) onUserUpdateSuccess:(UserInfor *)userInfo {
+    NSLog(@"UserName: %@",[userInfo getUserName]);
+    NSLog(@"UserId: %d",[userInfo getUserId]);
+}
+
 - (void) onUserLogoutSuccess:(UserInfor*) userInfo {
     
 }

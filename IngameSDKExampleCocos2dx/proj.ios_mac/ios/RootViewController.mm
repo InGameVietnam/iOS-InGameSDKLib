@@ -111,7 +111,7 @@
 }
 
 - (void) makePayment {
-    [[SDKViewController getInstance] showPaymentWithOrder:@"YourGameOrderID"];
+    [[SDKViewController getInstance] showPaymentWithOrder:@"8YourGameOrderID"];
 }
 
 - (void) onUserLoginSuccess:(UserInfor *)userInfo {

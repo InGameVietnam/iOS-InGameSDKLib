@@ -22,6 +22,7 @@
 @optional
 - (void) onUserLoginSuccess:(UserInfor*) userInfo;
 - (void) onUserLogoutSuccess:(UserInfor*) userInfo;
+- (void) onUserUpdateSuccess:(UserInfor*) userInfo;
 - (void) onCloseSDKUI;
 - (void) onGetFacebookFriendListSuccess:(NSMutableArray*) friendlist;
 
@@ -57,6 +58,8 @@
 - (void) onUserLogoutCallback;
 - (void) onUserLoginFailCallback;
 - (void) onLoginSuccessWithUserName:(NSString *)username andPassWord:(NSString *)password;
+- (void) onUpdateSuccessWithUserName:(NSString *)username andPassWord:(NSString *)password;
+
 - (void) close;
 - (void) closeWithErrors;
 - (void) startAppFlyerTracking;
