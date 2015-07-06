@@ -96,6 +96,11 @@ And Result
 
 ![add](http://s757.photobucket.com/albums/xx212/ichirokudo/Ingame%20iOS/ios-quickstart-12_zpscwvxcz08.png)
 
+####Config Project Setting:
+In project navigation goto **Project target > Build Settings Tab > Linking** and add **-ObjC** to **Other Linker Flags**
+
+![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame/Screen%20Shot%202015-07-06%20at%205.11.32%20PM_zpsjnuvxqnl.png)
+
 ####Init Facebook Login:
 You need make sure **Facebook App ID**, **Facebook Display Name** and **URLSchemes**- Added your app's **.plist** file.
 
@@ -125,103 +130,80 @@ Replace or add this code to our **Appdelegate** on function **onpenURL**
 
 ##How to init the SDK
 
-Replace your **AppID** and **AppKey** at **IngameSDK/SDKConfig.h** in your xcode project navigation
+Open **AppInfor.plist** in **INGResources.bundle** and replace right information at here. Please contact to the supporter to get right infomation.
 
-![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame%20iOS/D3310A7FD895DD57CBA68D9EA59F1A273BF583E34ED088D643pimgpsh_fullsize_distr.jpg_zpsty7eqgpo.png)
+![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame/1_zpssjo2auqe.png)
 
-In project navigation choose **ViewController.m**, this is **RootViewControler** of our Application and init IngameSDK
+In project navigation choose **Appdelegate.m**
 
 Import IngameSDK
 ```sh
-#import "SDKViewController.h"
+#import "include/InGameSDK/IngSDK.h"
+#import "include/InGameSDK/IngNavigationController.h"
 ```
-and after init IngameSDK on **ViewDidLoad** function
-```sh
-//init ingame SDK on rootviewcontroller
-SDKViewController *sdkIngame = [SDKViewController getInstance];
-[sdkIngame  setMainView:self]
-//set your callback url
-[sdkIngame setGameCallbackURL:@"www.example.YourCallbackURL.com"];
-```
-![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame%20iOS/Screen%20Shot%202015-05-23%20at%2011.57.34%20AM_zpsp70bks5g.png)
-
-The quickest way to add a reference is to open up **ViewController.m**, import the library.
-
-If you init your **RootViewController** in **Appdelegate**
+and after that init IngameSDK on **didFinishLaunchingWithOptions** function
 ```sh
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    MainView *viewController = [[MainView alloc] initWithNibName:@"MainView" bundle:nil];
-    //UINavigationController *navigation = [[UINavigationController alloc]initWithRootViewController:viewController];
-    self.window.rootViewController = viewController;
     
-    SDKViewController *sdkIngame = [[SDKViewController getInstance] initWithMainView:viewController];
-    [sdkIngame setGameCallbackURL:@"www.yourCallbackURL.example.com"];
-    // set a delegate for callbacks
-    sdkIngame.IGDelegate = viewController;
+    MainView *gameViewController = [[MainView alloc] initWithNibName:@"MainView" bundle:nil];
     
+    IngNavigationController *navigation = [[IngNavigationController alloc]initWithRootViewController:gameViewController];
+    //[navigation setAppOrientation:UIInterfaceOrientationMaskLandscapeLeft];
+    self.window.rootViewController = navigation;
+    
+    [navigation setNavigationBarHidden:YES];
+    
+    [[IngSDK getInstance] setRootViewController:gameViewController andCallbackURL:@"www.gameURLCallback.com"];
+    [[IngSDK getInstance] startSDK];
+    [[IngSDK getInstance] setIGDelegate:gameViewController];
+
     [self.window makeKeyAndVisible];
     return YES;
 }
 ```
+![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame/2_zpswnxpcra2.png)
 
-####The last
-#####Hide status bar
-Add **Status bar is initially hidden** with value **YES** and **View controller-based status bar appearance** with value **NO** to our **infor.plist** file
-
-![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame%20iOS/ios-quickstart-19_zpsvb6b0vi7.png)
-
->Because Ingame main button is white color, Pretty good view if you change background color of ViewControler is Black or Blue (dark color).
-
+>In normally, Ingame SDK will be auto detect game screen orientation and fix the Ingame SDK UI for this orientation, but sometime (perhaps because the game engine) Ingame SDK cannot get right game screen orientation, in this case you will hard code to set right rotation of game screen. you can see above code:
+```sh
+[navigation setAppOrientation:UIInterfaceOrientationMaskLandscapeLeft];
+```
 
 ##Rebuild your project
 
 Rebuild and run your project. You'll see after screen, you did init success ingameSDK. If not, please contact IngameSDK developer team to get Support
 
-![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame%20iOS/iOS%20Simulator%20Screen%20Shot%20Mar%2013%202015%202.13.34%20PM_zpsue3bvzhv.png)
+![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame/3_zpswhknm0j4.png)
 
 ##Make payment on your Application
 
 Add this code when you will call to payment of Ingame SDK
 ```sh
-[[SDKViewController getInstance] showPaymentWithOrder:@"YourGameOrderID"];
+[[IngSDK getInstance] showPaymentWithOrder:@"GameOrderID"];
 ```
 Example:
 ```sh
 - (IBAction)onPayment:(id)sender {
-    [[SDKViewController getInstance] showPaymentWithOrder:@"YourGameOrderID"];
+    [[IngSDK getInstance] showPaymentWithOrder:@"12345"];
 }
 ```
-![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame%20iOS/8486A7B418373FAD9E398B82AD5A197282B4CA23B04438F647pimgpsh_fullsize_distr.jpg_zpsqaihwotg.png)
+![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame/4_zpsmcecgsom.png)
 
-##IngameSKDDelegate implementation
+##Ingame SDK Delegate methods implementation
 
-To register for Ingame SDK events, set the delegate property on a Viewcontroller to an object that implements the **IGDelegate** protocol. Generally, the class that implements Ingame SDK will also act as the delegate class, in which case the delegate property can be set to **self** or a **viewController**.
+To register for Ingame SDK events, set the delegate property on a Viewcontroller (gameRootViewController) to an object that implements the **IngSDKDelegate** protocol. Generally, the class that implements Ingame SDK will also act as the delegate class, in which case the delegate property can be set to **self** or a **viewController**.
 
+In this case you can see i set **IGDelegate** on **didFinishLaunchingWithOptions** 
+function when i init IngSDK.
 ```sh
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    MainView *viewController = [[MainView alloc] initWithNibName:@"MainView" bundle:nil];
-    //UINavigationController *navigation = [[UINavigationController alloc]initWithRootViewController:viewController];
-    self.window.rootViewController = viewController;
-    
-    SDKViewController *sdkIngame = [[SDKViewController getInstance] initWithMainView:viewController];
-    [sdkIngame setGameCallbackURL:@"www.yourCallbackURL.example.com"];
-    // set a delegate for callbacks
-    sdkIngame.IGDelegate = viewController;
-    
-    [self.window makeKeyAndVisible];
-    return YES;
-}
+[[IngSDK getInstance] setIGDelegate:gameViewController];
 ```
+And Implement on Viewcontroller:
+
 ```sh
-@interface MainView : UIViewController <IngameSDKDelegate>
+@interface MainView : UIViewController <IngSDKDelegate>
 
 @end
 ```
@@ -244,6 +226,29 @@ userInfo.getUserId(): Account ID<br/>
 userInfo.getAccessToken(): Access token<br/>
 userInfo.getEmail(): Email<br/>
 userInfo.getPhone(): Phone number<br/>
+
+##Call Function from game without use IngSDK Button
+Normally, user can open more games, share game or logout account with their friends when they tap on IngSDK Button. But you can call those functions via IngSDK. For example:
+
+```sh
+- (IBAction)onTapLogout:(id)sender {
+    [[IngSDK getInstance] logOut];
+}
+
+- (IBAction)onTapLogin:(id)sender {
+    [[IngSDK getInstance] logIn];
+}
+
+- (IBAction)onTapShare:(id)sender {
+    [[IngSDK getInstance] shareGame];
+}
+
+- (IBAction)onTapMoregame:(id)sender {
+    [[IngSDK getInstance] getMoreGame];
+}
+
+```
+
 
 License
 ----
