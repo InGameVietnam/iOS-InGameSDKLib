@@ -24,10 +24,9 @@
  ****************************************************************************/
 
 #import <UIKit/UIKit.h>
-#import "SDKViewController.h"
+#import "IngSDK.h"
 
-
-@interface RootViewController : UIViewController<IngameSDKDelegate> {
+@interface RootViewController : UIViewController<IngSDKDelegate> {
 
 }
 

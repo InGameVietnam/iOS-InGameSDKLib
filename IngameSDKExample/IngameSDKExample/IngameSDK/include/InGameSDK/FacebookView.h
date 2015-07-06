@@ -28,6 +28,8 @@
     NSMutableArray *friend_searchresult;
     
     BOOL isFiltered;
+    
+    BOOL onLogoutFb;
 }
 
 + (id) getInstance;

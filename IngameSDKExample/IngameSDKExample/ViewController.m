@@ -18,13 +18,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    //init ingame SDK on rootviewcontroller
-    SDKViewController *sdkIngame = [SDKViewController getInstance];
-    [sdkIngame setMainView:self];
-    // set a delegate for callbacks
-    sdkIngame.IGDelegate = self;
-    //set your callback url
-    [sdkIngame setGameCallbackURL:@"www.yourcallbackURL.com"];
+    IngNavigationController *navigation = [[IngNavigationController alloc] initWithRootViewController:self];
+    self.view.window.rootViewController = navigation;
+    
+    [navigation setNavigationBarHidden:YES];
+    
+    [[IngSDK getInstance] setRootViewController:self andCallbackURL:@"www.yourcallbackURL.com"];
+    [[IngSDK getInstance] startSDK];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,7 +33,7 @@
 }
 
 - (IBAction)onTapLogout:(id)sender {
-    [[SDKViewController getInstance] onLogout];
+    [[IngSDK getInstance] logOut];
 }
 
 #pragma IGSDKDelegate

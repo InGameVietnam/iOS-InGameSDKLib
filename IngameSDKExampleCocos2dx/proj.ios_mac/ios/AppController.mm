@@ -29,7 +29,8 @@
 #import "RootViewController.h"
 #import "Supporter.h"
 //import Ingame Mobile SDK
-#import "SDKViewController.h"
+#import "IngSDK.h"
+#import "IngNavigationController.h"
 #import <FacebookSDK/FacebookSDK.h>
 
 @implementation AppController
@@ -70,17 +71,26 @@ static AppDelegate s_sharedApplication;
     
     [Supporter setRootViewController:_viewController];
     
-    // Set RootViewController to window
-    if ( [[UIDevice currentDevice].systemVersion floatValue] < 6.0)
-    {
-        // warning: addSubView doesn't work on iOS6
-        [window addSubview: _viewController.view];
-    }
-    else
-    {
-        // use this method on ios6
-        [window setRootViewController:_viewController];
-    }
+    IngNavigationController *navigation = [[IngNavigationController alloc] initWithRootViewController:_viewController];
+    window.rootViewController = navigation;
+    
+    [navigation setNavigationBarHidden:YES];
+    
+    [[IngSDK getInstance] setRootViewController:_viewController andCallbackURL:@"www.google.com.vn"];
+    [[IngSDK getInstance] startSDK];
+
+    
+//    // Set RootViewController to window
+//    if ( [[UIDevice currentDevice].systemVersion floatValue] < 6.0)
+//    {
+//        // warning: addSubView doesn't work on iOS6
+//        [window addSubview: _viewController.view];
+//    }
+//    else
+//    {
+//        // use this method on ios6
+//        [window setRootViewController:_viewController];
+//    }
 
     [window makeKeyAndVisible];
 
@@ -92,12 +102,6 @@ static AppDelegate s_sharedApplication;
 
     app->run();
 
-    //init IngameSDK Viewcontroller
-    //init ingame SDK on rootviewcontroller
-    SDKViewController *sdkIngame = [SDKViewController getInstance];
-    [sdkIngame setMainView:_viewController];
-    //set your callback url
-    [sdkIngame setGameCallbackURL:@"www.example.YourCallbackURL.com"];
     
     return YES;
 }
@@ -157,6 +161,7 @@ static AppDelegate s_sharedApplication;
     
     return wasHandled;
 }
+
 
 #pragma mark -
 #pragma mark Memory management

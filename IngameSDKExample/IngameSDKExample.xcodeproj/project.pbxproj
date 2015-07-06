@@ -35,7 +35,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9EBB797F1AB6D9A700944D21 /* SDKConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDKConfig.h; sourceTree = "<group>"; };
 		9EBB79801AB6D9A700944D21 /* SDKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDKViewController.h; sourceTree = "<group>"; };
 		9EBB79811AB6D9A700944D21 /* UserInfor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfor.h; sourceTree = "<group>"; };
 		9EBBA36E1AB2883600A6AD00 /* IngameSDKExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IngameSDKExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,7 +170,6 @@
 			children = (
 				9EBBA39A1AB2942F00A6AD00 /* INGResources.bundle */,
 				9EBBA3981AB28FA500A6AD00 /* libInGameSDK.a */,
-				9EBB797F1AB6D9A700944D21 /* SDKConfig.h */,
 				9EBB79801AB6D9A700944D21 /* SDKViewController.h */,
 				9EBB79811AB6D9A700944D21 /* UserInfor.h */,
 			);
