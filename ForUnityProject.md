@@ -102,7 +102,7 @@ Because Ingame SDK use navigation controller, you must be change the default ini
 
 Rebuild and run your project. You'll see after screen, you did init success ingameSDK. If not, please contact IngameSDK developer team to get Support
 
-![add](IMG_8)
+![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame/3_zpswhknm0j4.png)
 
 ##Make payment on your Game
 
@@ -116,7 +116,7 @@ Example:
    [[IngSDK getInstance] showPaymentWithOrder:@"GameOrderID"];
 }
 ```
-![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame%20iOS/ios-cocos2dx-11_zpsuebpnbqw.png)
+![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame/4_zpsmcecgsom.png)
 
 ##IngameSKDDelegate implementation
 
