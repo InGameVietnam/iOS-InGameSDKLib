@@ -111,7 +111,7 @@
 }
 
 - (void) makePayment {
-    [[IngSDK getInstance] showPaymentWithOrder:@"quoctc1988"];
+    [[IngSDK getInstance] showPaymentWithOrder:@"GameOrderID2"];
 }
 
 - (void) onUserLoginSuccess:(UserInfor *)userInfo {

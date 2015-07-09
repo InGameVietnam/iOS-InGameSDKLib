@@ -165,15 +165,6 @@
 		521A8EA819F11F5000D177D7 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
 		52B47A461A53D09B004E4C60 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		9E81C9F01B4677EE0085C8E6 /* INGResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = INGResources.bundle; path = ios/IngameSDK/INGResources.bundle; sourceTree = "<group>"; };
-		9E81C9F41B4681240085C8E6 /* AppsFlyerTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppsFlyerTracker.h; sourceTree = "<group>"; };
-		9E81C9F51B4681240085C8E6 /* CardInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardInfo.h; sourceTree = "<group>"; };
-		9E81C9F61B4681240085C8E6 /* FacebookController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookController.h; sourceTree = "<group>"; };
-		9E81C9F71B4681240085C8E6 /* FacebookView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookView.h; sourceTree = "<group>"; };
-		9E81C9F81B4681240085C8E6 /* IngSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IngSDK.h; sourceTree = "<group>"; };
-		9E81C9F91B4681240085C8E6 /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginController.h; sourceTree = "<group>"; };
-		9E81C9FA1B4681240085C8E6 /* SDKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDKViewController.h; sourceTree = "<group>"; };
-		9E81C9FB1B4681240085C8E6 /* ServiceAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceAPI.h; sourceTree = "<group>"; };
-		9E81C9FC1B4681240085C8E6 /* UserInfor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfor.h; sourceTree = "<group>"; };
 		9E9631541AB7F5E200EC2D16 /* libInGameSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libInGameSDK.a; path = ios/IngameSDK/libInGameSDK.a; sourceTree = "<group>"; };
 		9E9631561AB7F75900EC2D16 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/System/Library/Frameworks/MessageUI.framework; sourceTree = DEVELOPER_DIR; };
 		9E9631581AB7F77000EC2D16 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
@@ -189,7 +180,12 @@
 		9E9631711AB8011B00EC2D16 /* Supporter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Supporter.m; path = ios/Supporter.m; sourceTree = SOURCE_ROOT; };
 		9ED6B4491B46F12700E560B0 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/MediaPlayer.framework; sourceTree = DEVELOPER_DIR; };
 		9ED6B44B1B46F12D00E560B0 /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/GameController.framework; sourceTree = DEVELOPER_DIR; };
-		9ED6B7681B497FB1007C0EA5 /* IngNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IngNavigationController.h; sourceTree = "<group>"; };
+		9EDF0ABD1B4D2A4000FFE79E /* AppsFlyerTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppsFlyerTracker.h; sourceTree = "<group>"; };
+		9EDF0ABE1B4D2A4000FFE79E /* CardInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardInfo.h; sourceTree = "<group>"; };
+		9EDF0ABF1B4D2A4000FFE79E /* IngNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IngNavigationController.h; sourceTree = "<group>"; };
+		9EDF0AC01B4D2A4000FFE79E /* IngSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IngSDK.h; sourceTree = "<group>"; };
+		9EDF0AC11B4D2A4000FFE79E /* ServiceAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceAPI.h; sourceTree = "<group>"; };
+		9EDF0AC21B4D2A4000FFE79E /* UserInfor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfor.h; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -411,16 +407,12 @@
 		9E81C9F31B4681240085C8E6 /* InGameSDK */ = {
 			isa = PBXGroup;
 			children = (
-				9ED6B7681B497FB1007C0EA5 /* IngNavigationController.h */,
-				9E81C9F41B4681240085C8E6 /* AppsFlyerTracker.h */,
-				9E81C9F51B4681240085C8E6 /* CardInfo.h */,
-				9E81C9F61B4681240085C8E6 /* FacebookController.h */,
-				9E81C9F71B4681240085C8E6 /* FacebookView.h */,
-				9E81C9F81B4681240085C8E6 /* IngSDK.h */,
-				9E81C9F91B4681240085C8E6 /* LoginController.h */,
-				9E81C9FA1B4681240085C8E6 /* SDKViewController.h */,
-				9E81C9FB1B4681240085C8E6 /* ServiceAPI.h */,
-				9E81C9FC1B4681240085C8E6 /* UserInfor.h */,
+				9EDF0ABD1B4D2A4000FFE79E /* AppsFlyerTracker.h */,
+				9EDF0ABE1B4D2A4000FFE79E /* CardInfo.h */,
+				9EDF0ABF1B4D2A4000FFE79E /* IngNavigationController.h */,
+				9EDF0AC01B4D2A4000FFE79E /* IngSDK.h */,
+				9EDF0AC11B4D2A4000FFE79E /* ServiceAPI.h */,
+				9EDF0AC21B4D2A4000FFE79E /* UserInfor.h */,
 			);
 			name = InGameSDK;
 			path = ios/IngameSDK/include/InGameSDK;
