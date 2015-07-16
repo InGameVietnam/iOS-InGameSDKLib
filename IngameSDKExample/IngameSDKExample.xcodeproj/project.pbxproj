@@ -7,15 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E1F03E51B57562A002E2554 /* INGResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9E1F03E31B57562A002E2554 /* INGResources.bundle */; };
+		9E1F03E61B57562A002E2554 /* libInGameSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E1F03E41B57562A002E2554 /* libInGameSDK.a */; };
+		9E1F03E81B57563E002E2554 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E1F03E71B57563E002E2554 /* AdSupport.framework */; };
+		9E1F03EA1B5756BC002E2554 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E1F03E91B5756BC002E2554 /* ViewController.xib */; };
+		9E1F03EC1B5759AC002E2554 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E1F03EB1B5759AC002E2554 /* bg.png */; };
 		9EBBA3741AB2883600A6AD00 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EBBA3731AB2883600A6AD00 /* main.m */; };
 		9EBBA3771AB2883600A6AD00 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EBBA3761AB2883600A6AD00 /* AppDelegate.m */; };
 		9EBBA37A1AB2883600A6AD00 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EBBA3791AB2883600A6AD00 /* ViewController.m */; };
-		9EBBA37D1AB2883600A6AD00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EBBA37B1AB2883600A6AD00 /* Main.storyboard */; };
 		9EBBA37F1AB2883600A6AD00 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9EBBA37E1AB2883600A6AD00 /* Images.xcassets */; };
 		9EBBA3821AB2883600A6AD00 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EBBA3801AB2883600A6AD00 /* LaunchScreen.xib */; };
 		9EBBA38E1AB2883600A6AD00 /* IngameSDKExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EBBA38D1AB2883600A6AD00 /* IngameSDKExampleTests.m */; };
-		9EBBA3991AB28FA500A6AD00 /* libInGameSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBBA3981AB28FA500A6AD00 /* libInGameSDK.a */; };
-		9EBBA39B1AB2942F00A6AD00 /* INGResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9EBBA39A1AB2942F00A6AD00 /* INGResources.bundle */; };
 		9EBBA3B31AB2985300A6AD00 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBBA3B21AB2985300A6AD00 /* FacebookSDK.framework */; };
 		9EBBA3B51AB2985E00A6AD00 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBBA3B41AB2985E00A6AD00 /* SystemConfiguration.framework */; };
 		9EBBA3B71AB2987D00A6AD00 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EBBA3B61AB2987D00A6AD00 /* StoreKit.framework */; };
@@ -35,8 +37,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9EBB79801AB6D9A700944D21 /* SDKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDKViewController.h; sourceTree = "<group>"; };
-		9EBB79811AB6D9A700944D21 /* UserInfor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfor.h; sourceTree = "<group>"; };
+		9E1F03DC1B57562A002E2554 /* ACTReporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACTReporter.h; sourceTree = "<group>"; };
+		9E1F03DD1B57562A002E2554 /* AppsFlyerTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppsFlyerTracker.h; sourceTree = "<group>"; };
+		9E1F03DE1B57562A002E2554 /* CardInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardInfo.h; sourceTree = "<group>"; };
+		9E1F03DF1B57562A002E2554 /* IngNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IngNavigationController.h; sourceTree = "<group>"; };
+		9E1F03E01B57562A002E2554 /* IngSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IngSDK.h; sourceTree = "<group>"; };
+		9E1F03E11B57562A002E2554 /* ServiceAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceAPI.h; sourceTree = "<group>"; };
+		9E1F03E21B57562A002E2554 /* UserInfor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfor.h; sourceTree = "<group>"; };
+		9E1F03E31B57562A002E2554 /* INGResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = INGResources.bundle; sourceTree = "<group>"; };
+		9E1F03E41B57562A002E2554 /* libInGameSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libInGameSDK.a; sourceTree = "<group>"; };
+		9E1F03E71B57563E002E2554 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		9E1F03E91B5756BC002E2554 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		9E1F03EB1B5759AC002E2554 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
 		9EBBA36E1AB2883600A6AD00 /* IngameSDKExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IngameSDKExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EBBA3721AB2883600A6AD00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9EBBA3731AB2883600A6AD00 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -44,14 +56,11 @@
 		9EBBA3761AB2883600A6AD00 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		9EBBA3781AB2883600A6AD00 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		9EBBA3791AB2883600A6AD00 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		9EBBA37C1AB2883600A6AD00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9EBBA37E1AB2883600A6AD00 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9EBBA3811AB2883600A6AD00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		9EBBA3871AB2883600A6AD00 /* IngameSDKExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IngameSDKExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EBBA38C1AB2883600A6AD00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9EBBA38D1AB2883600A6AD00 /* IngameSDKExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IngameSDKExampleTests.m; sourceTree = "<group>"; };
-		9EBBA3981AB28FA500A6AD00 /* libInGameSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libInGameSDK.a; path = ../../libInGameSDK.a; sourceTree = "<group>"; };
-		9EBBA39A1AB2942F00A6AD00 /* INGResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = INGResources.bundle; path = ../../INGResources.bundle; sourceTree = "<group>"; };
 		9EBBA3B21AB2985300A6AD00 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		9EBBA3B41AB2985E00A6AD00 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		9EBBA3B61AB2987D00A6AD00 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -68,13 +77,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E1F03E81B57563E002E2554 /* AdSupport.framework in Frameworks */,
 				9EBBA3BD1AB299D200A6AD00 /* MessageUI.framework in Frameworks */,
+				9E1F03E61B57562A002E2554 /* libInGameSDK.a in Frameworks */,
 				9EBBA3BB1AB298A600A6AD00 /* MobileCoreServices.framework in Frameworks */,
 				9EBBA3B91AB2989100A6AD00 /* libz.dylib in Frameworks */,
 				9EBBA3B71AB2987D00A6AD00 /* StoreKit.framework in Frameworks */,
 				9EBBA3B51AB2985E00A6AD00 /* SystemConfiguration.framework in Frameworks */,
 				9EBBA3B31AB2985300A6AD00 /* FacebookSDK.framework in Frameworks */,
-				9EBBA3991AB28FA500A6AD00 /* libInGameSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,9 +98,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9E1F03D91B57562A002E2554 /* IngameSDK */ = {
+			isa = PBXGroup;
+			children = (
+				9E1F03DA1B57562A002E2554 /* include */,
+				9E1F03E31B57562A002E2554 /* INGResources.bundle */,
+				9E1F03E41B57562A002E2554 /* libInGameSDK.a */,
+			);
+			name = IngameSDK;
+			path = IngameSDKExample/IngameSDK;
+			sourceTree = "<group>";
+		};
+		9E1F03DA1B57562A002E2554 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				9E1F03DB1B57562A002E2554 /* InGameSDK */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		9E1F03DB1B57562A002E2554 /* InGameSDK */ = {
+			isa = PBXGroup;
+			children = (
+				9E1F03DC1B57562A002E2554 /* ACTReporter.h */,
+				9E1F03DD1B57562A002E2554 /* AppsFlyerTracker.h */,
+				9E1F03DE1B57562A002E2554 /* CardInfo.h */,
+				9E1F03DF1B57562A002E2554 /* IngNavigationController.h */,
+				9E1F03E01B57562A002E2554 /* IngSDK.h */,
+				9E1F03E11B57562A002E2554 /* ServiceAPI.h */,
+				9E1F03E21B57562A002E2554 /* UserInfor.h */,
+			);
+			path = InGameSDK;
+			sourceTree = "<group>";
+		};
 		9E614F711AE8A7CE002D4CD7 /* FrameWorks */ = {
 			isa = PBXGroup;
 			children = (
+				9E1F03D91B57562A002E2554 /* IngameSDK */,
 				9EBBA3C21AB2D2AE00A6AD00 /* CoreTelephony.framework */,
 				9EBBA3C01AB2D2A200A6AD00 /* AVFoundation.framework */,
 				9EBBA3BE1AB2CD7700A6AD00 /* CFNetwork.framework */,
@@ -107,8 +151,8 @@
 		9EBBA3651AB2883600A6AD00 = {
 			isa = PBXGroup;
 			children = (
+				9E1F03E71B57563E002E2554 /* AdSupport.framework */,
 				9E614F711AE8A7CE002D4CD7 /* FrameWorks */,
-				9EBBA3AE1AB2981600A6AD00 /* InGameSDK */,
 				9EBBA3701AB2883600A6AD00 /* IngameSDKExample */,
 				9EBBA38A1AB2883600A6AD00 /* IngameSDKExampleTests */,
 				9EBBA36F1AB2883600A6AD00 /* Products */,
@@ -127,11 +171,12 @@
 		9EBBA3701AB2883600A6AD00 /* IngameSDKExample */ = {
 			isa = PBXGroup;
 			children = (
+				9E1F03EB1B5759AC002E2554 /* bg.png */,
 				9EBBA3751AB2883600A6AD00 /* AppDelegate.h */,
 				9EBBA3761AB2883600A6AD00 /* AppDelegate.m */,
 				9EBBA3781AB2883600A6AD00 /* ViewController.h */,
 				9EBBA3791AB2883600A6AD00 /* ViewController.m */,
-				9EBBA37B1AB2883600A6AD00 /* Main.storyboard */,
+				9E1F03E91B5756BC002E2554 /* ViewController.xib */,
 				9EBBA37E1AB2883600A6AD00 /* Images.xcassets */,
 				9EBBA3801AB2883600A6AD00 /* LaunchScreen.xib */,
 				9EBBA3711AB2883600A6AD00 /* Supporting Files */,
@@ -163,18 +208,6 @@
 				9EBBA38C1AB2883600A6AD00 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		9EBBA3AE1AB2981600A6AD00 /* InGameSDK */ = {
-			isa = PBXGroup;
-			children = (
-				9EBBA39A1AB2942F00A6AD00 /* INGResources.bundle */,
-				9EBBA3981AB28FA500A6AD00 /* libInGameSDK.a */,
-				9EBB79801AB6D9A700944D21 /* SDKViewController.h */,
-				9EBB79811AB6D9A700944D21 /* UserInfor.h */,
-			);
-			name = InGameSDK;
-			path = IngameSDKExample/IngameSDK/include/InGameSDK;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,9 +290,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9EBBA39B1AB2942F00A6AD00 /* INGResources.bundle in Resources */,
-				9EBBA37D1AB2883600A6AD00 /* Main.storyboard in Resources */,
+				9E1F03EC1B5759AC002E2554 /* bg.png in Resources */,
+				9E1F03E51B57562A002E2554 /* INGResources.bundle in Resources */,
 				9EBBA3821AB2883600A6AD00 /* LaunchScreen.xib in Resources */,
+				9E1F03EA1B5756BC002E2554 /* ViewController.xib in Resources */,
 				9EBBA37F1AB2883600A6AD00 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,14 +337,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		9EBBA37B1AB2883600A6AD00 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9EBBA37C1AB2883600A6AD00 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		9EBBA3801AB2883600A6AD00 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -420,6 +446,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/IngameSDKExample/IngameSDK",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
@@ -445,6 +472,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/IngameSDKExample/IngameSDK",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};

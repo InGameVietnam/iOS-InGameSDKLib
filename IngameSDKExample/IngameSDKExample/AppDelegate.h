@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "IngSDK.h"
+#import "IngNavigationController.h"
+#import "ViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

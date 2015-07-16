@@ -10,16 +10,28 @@
 #import <UIKit/UIKit.h>
 #import "UserInfor.h"
 #import "ServiceAPI.h"
+//appflyer tracking
 #import "AppsFlyerTracker.h"
 
-@protocol IngSDKDelegate <NSObject>
+#define IGUserNameKey @"username"
+#define IGUserIdKey @"userid"
+#define IGUserAccessTokenKey @"useraccesstoken"
+#define IGFriendsKey @"friends"
 
-@optional
-- (void) onUserLoginSuccess:(UserInfor*) userInfo;
-- (void) onUserLogoutSuccess:(UserInfor*) userInfo;
-- (void) onUserUpdateSuccess:(UserInfor*) userInfo;
+extern NSString *const onUserLoginSuccess;
+extern NSString *const onUserLogoutSuccess;
+extern NSString *const onUserUpdateSuccess;
 
-@end
+extern NSString *const onPostFacebookSuccess;
+
+//@protocol IngSDKDelegate <NSObject>
+//
+//@optional
+////- (void) onUserLoginSuccess:(UserInfor*) userInfo;
+////- (void) onUserLogoutSuccess:(UserInfor*) userInfo;
+////- (void) onUserUpdateSuccess:(UserInfor*) userInfo;
+//
+//@end
 
 @interface IngSDK : NSObject <ServiceAPIDelegate,AppsFlyerTrackerDelegate> {
     UIViewController* _RootViewController;
@@ -31,20 +43,23 @@
     UIViewController* loginViewController;
     UIViewController* paymentViewController;
 
-    UserInfor* currentUser;
+    //UserInfor* currentUser;
 }
 
 + (id) getInstance;
 
-@property (nonatomic, weak) id <IngSDKDelegate> IGDelegate;
+//@property (nonatomic, weak) id <IngSDKDelegate> IGDelegate;
+
+@property (strong, nonatomic) UserInfor* currentUser;
 
 @property (nonatomic, strong) UINavigationController* navigationController;
 
 - (void) setRootViewController:(UIViewController*) rootView andCallbackURL:(NSString*) callbackURL;
 - (void) startSDK;
+- (void) startSDKWithoutAutoLogin;
 - (void) showPaymentWithOrder:(NSString*) gameOrder;
 - (void) logOut;
-- (void) logIn;
+- (void) logInWithAuto:(BOOL) autoLogin;
 - (void) shareGame;
 - (void) getMoreGame;
 

@@ -59,6 +59,7 @@
 		521A8EA919F11F5000D177D7 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 521A8EA819F11F5000D177D7 /* fonts */; };
 		521A8EAA19F11F5000D177D7 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 521A8EA819F11F5000D177D7 /* fonts */; };
 		52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B47A461A53D09B004E4C60 /* Security.framework */; };
+		9E1F03D81B574D15002E2554 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E1F03D71B574D15002E2554 /* AdSupport.framework */; };
 		9E81C9F11B4677EE0085C8E6 /* INGResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9E81C9F01B4677EE0085C8E6 /* INGResources.bundle */; };
 		9E9631551AB7F5E200EC2D16 /* libInGameSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E9631541AB7F5E200EC2D16 /* libInGameSDK.a */; };
 		9E9631571AB7F75900EC2D16 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E9631561AB7F75900EC2D16 /* MessageUI.framework */; };
@@ -164,6 +165,7 @@
 		521A8E6319F0C34300D177D7 /* Default-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-736h@3x.png"; sourceTree = "<group>"; };
 		521A8EA819F11F5000D177D7 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
 		52B47A461A53D09B004E4C60 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		9E1F03D71B574D15002E2554 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk/System/Library/Frameworks/AdSupport.framework; sourceTree = DEVELOPER_DIR; };
 		9E81C9F01B4677EE0085C8E6 /* INGResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = INGResources.bundle; path = ios/IngameSDK/INGResources.bundle; sourceTree = "<group>"; };
 		9E9631541AB7F5E200EC2D16 /* libInGameSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libInGameSDK.a; path = ios/IngameSDK/libInGameSDK.a; sourceTree = "<group>"; };
 		9E9631561AB7F75900EC2D16 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.2.sdk/System/Library/Frameworks/MessageUI.framework; sourceTree = DEVELOPER_DIR; };
@@ -200,6 +202,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E1F03D81B574D15002E2554 /* AdSupport.framework in Frameworks */,
 				9ED6B44C1B46F12D00E560B0 /* GameController.framework in Frameworks */,
 				9ED6B44A1B46F12700E560B0 /* MediaPlayer.framework in Frameworks */,
 				9E9631691AB7FD1200EC2D16 /* StoreKit.framework in Frameworks */,
@@ -301,6 +304,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9E1F03D71B574D15002E2554 /* AdSupport.framework */,
 				9ED6B44B1B46F12D00E560B0 /* GameController.framework */,
 				9ED6B4491B46F12700E560B0 /* MediaPlayer.framework */,
 				9E9631681AB7FD1200EC2D16 /* StoreKit.framework */,

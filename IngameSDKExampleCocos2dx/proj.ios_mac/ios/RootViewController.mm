@@ -39,18 +39,29 @@
 }
 */
 
-/*
+
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
 - (void)loadView {
+
+    [[IngSDK getInstance] setRootViewController:self andCallbackURL:@"www.GameCallbackURL.com.vn"];
+    [[IngSDK getInstance] startSDK];
+    
+    //add notification to call back sdk functions
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onUserLoginSuccess:) name:onUserLoginSuccess object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onUserLogoutSuccess:) name:onUserLogoutSuccess object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onUserUpdateSuccess:) name:onUserUpdateSuccess object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onPostFacebookSuccess:) name:onPostFacebookSuccess object:nil];
 }
-*/
 
 /*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
 }
-
 */
 // Override to allow orientations other than the default portrait orientation.
 // This method is deprecated on ios6
@@ -105,7 +116,6 @@
     // e.g. self.myOutlet = nil;
 }
 
-
 - (void)dealloc {
     [super dealloc];
 }
@@ -114,12 +124,35 @@
     [[IngSDK getInstance] showPaymentWithOrder:@"GameOrderID2"];
 }
 
-- (void) onUserLoginSuccess:(UserInfor *)userInfo {
-    NSLog(@"callback User:%@ is Login",[userInfo getUserName]);
+#pragma IngameSDK Notifications
+- (void) onUserLoginSuccess:(NSNotification *) NotifiUserInfo {
+    NSString* username = [NotifiUserInfo.userInfo objectForKey:IGUserNameKey];
+    NSNumber* userid = [NotifiUserInfo.userInfo objectForKey:IGUserIdKey];
+    NSString* useraccesstoken = [NotifiUserInfo.userInfo objectForKey:IGUserAccessTokenKey];
+    
+    NSLog(@"Main view callback Login User:%@ and UserID is :%d and accesstoken: %@",username,[userid intValue],useraccesstoken);
 }
 
-- (void) onUserLogoutSuccess:(UserInfor *)userInfo {
-    NSLog(@"callback User:%@ is Logout",[userInfo getUserName]);
+- (void) onUserLogoutSuccess:(NSNotification *) NotifiUserInfo {
+    NSString* username = [NotifiUserInfo.userInfo objectForKey:IGUserNameKey];
+    NSNumber* userid = [NotifiUserInfo.userInfo objectForKey:IGUserIdKey];
+    NSString* useraccesstoken = [NotifiUserInfo.userInfo objectForKey:IGUserAccessTokenKey];
+    
+    NSLog(@"Main view callback Logout User:%@ is and UserID is :%d and accesstoken: %@",username,[userid intValue],useraccesstoken);
+}
+
+- (void) onUserUpdateSuccess:(NSNotification *) NotifiUserInfo {
+    NSString* username = [NotifiUserInfo.userInfo objectForKey:IGUserNameKey];
+    NSNumber* userid = [NotifiUserInfo.userInfo objectForKey:IGUserIdKey];
+    NSString* useraccesstoken = [NotifiUserInfo.userInfo objectForKey:IGUserAccessTokenKey];
+    
+    NSLog(@"Main view callback Update User:%@ is and UserID is :%d and accesstoken: %@",username,[userid intValue],useraccesstoken);
+}
+
+- (void) onPostFacebookSuccess:(NSNotification *) NotifiUserInfo {
+    NSMutableArray* friends = [NotifiUserInfo.userInfo objectForKey:IGFriendsKey];
+    
+    NSLog(@"Main view callback post succcess with number of friends %d", (int)friends.count);
 }
 
 @end

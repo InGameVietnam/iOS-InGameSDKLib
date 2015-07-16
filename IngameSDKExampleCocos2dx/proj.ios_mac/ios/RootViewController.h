@@ -26,7 +26,7 @@
 #import <UIKit/UIKit.h>
 #import "IngSDK.h"
 
-@interface RootViewController : UIViewController<IngSDKDelegate> {
+@interface RootViewController : UIViewController{
 
 }
 

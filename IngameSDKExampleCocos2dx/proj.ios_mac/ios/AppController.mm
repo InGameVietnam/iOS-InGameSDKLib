@@ -71,14 +71,13 @@ static AppDelegate s_sharedApplication;
     
     [Supporter setRootViewController:_viewController];
     
-    IngNavigationController *navigation = [[IngNavigationController alloc] initWithRootViewController:_viewController];
+    IngNavigationController *navigation = [[IngNavigationController alloc]initWithRootViewController:_viewController];
+    //use below code to fix orientation of game screen - remember use UIInterfaceOrientationMask_XXX_
+    //[navigation setAppOrientation:UIInterfaceOrientationMaskLandscapeLeft];
+    [navigation setNavigationBarHidden:YES];
     window.rootViewController = navigation;
     
-    [navigation setNavigationBarHidden:YES];
-    
-    [[IngSDK getInstance] setRootViewController:_viewController andCallbackURL:@"www.google.com.vn"];
-    [[IngSDK getInstance] startSDK];
-
+    [_viewController loadView];
     
 //    // Set RootViewController to window
 //    if ( [[UIDevice currentDevice].systemVersion floatValue] < 6.0)

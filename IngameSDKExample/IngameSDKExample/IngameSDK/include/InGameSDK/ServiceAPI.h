@@ -48,6 +48,7 @@
 
 //callback request more game
 - (void) onRequestMoreGameFinish:(NSDictionary*) dict;
+- (void) onRequestShareGameFinish:(NSDictionary*) dict;
 
 @end
 
@@ -91,6 +92,7 @@
 - (void) requestApplePaymentWithReceipt:(NSString*) recept andPassword:(NSString*) password ofUser:(UserInfor*) user forProductId:(NSString*)productId andGameOrder:(NSString*) gameOrder;
 - (void) requestBankPaymentConfirmWithTransactionReceipt:(NSString *)receipt ofUser:(UserInfor*) user;
 - (void) requestMoreGame;
+- (void) requestShareGame;
 
 //request captcha
 - (void) requestCaptChar;

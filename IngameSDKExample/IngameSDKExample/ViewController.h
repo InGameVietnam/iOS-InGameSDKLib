@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "IngameSDK/include/InGameSDK/IngNavigationController.h"
-#import "IngameSDK/include/InGameSDK/IngSDK.h"
+#import "IngNavigationController.h"
+#import "IngSDK.h"
 
-@interface ViewController : UIViewController<IngSDKDelegate>
+@interface ViewController : UIViewController
 
 
 @end

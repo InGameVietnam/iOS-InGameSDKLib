@@ -18,6 +18,21 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    // Override point for customization after application launch.
+    
+    ViewController *viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
+    
+    IngNavigationController *navigation = [[IngNavigationController alloc]initWithRootViewController:viewController];
+    //use below code to fix orientation of game screen - remember use UIInterfaceOrientationMask_XXX_
+    //[navigation setAppOrientation:UIInterfaceOrientationMaskLandscapeLeft];
+    [navigation setNavigationBarHidden:YES];
+    self.window.rootViewController = navigation;
+    
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
@@ -36,7 +51,7 @@
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [[IngSDK getInstance] onAppFlyerTracking];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
