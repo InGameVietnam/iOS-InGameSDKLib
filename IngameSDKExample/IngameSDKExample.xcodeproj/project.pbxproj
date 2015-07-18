@@ -37,13 +37,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9E1F03DC1B57562A002E2554 /* ACTReporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACTReporter.h; sourceTree = "<group>"; };
-		9E1F03DD1B57562A002E2554 /* AppsFlyerTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppsFlyerTracker.h; sourceTree = "<group>"; };
-		9E1F03DE1B57562A002E2554 /* CardInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardInfo.h; sourceTree = "<group>"; };
-		9E1F03DF1B57562A002E2554 /* IngNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IngNavigationController.h; sourceTree = "<group>"; };
-		9E1F03E01B57562A002E2554 /* IngSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IngSDK.h; sourceTree = "<group>"; };
-		9E1F03E11B57562A002E2554 /* ServiceAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceAPI.h; sourceTree = "<group>"; };
-		9E1F03E21B57562A002E2554 /* UserInfor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfor.h; sourceTree = "<group>"; };
 		9E1F03E31B57562A002E2554 /* INGResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = INGResources.bundle; sourceTree = "<group>"; };
 		9E1F03E41B57562A002E2554 /* libInGameSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libInGameSDK.a; sourceTree = "<group>"; };
 		9E1F03E71B57563E002E2554 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
@@ -70,6 +63,13 @@
 		9EBBA3BE1AB2CD7700A6AD00 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		9EBBA3C01AB2D2A200A6AD00 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		9EBBA3C21AB2D2AE00A6AD00 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		9EDA9D751B5A11E500475985 /* ACTReporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACTReporter.h; sourceTree = "<group>"; };
+		9EDA9D761B5A11E500475985 /* AppsFlyerTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppsFlyerTracker.h; sourceTree = "<group>"; };
+		9EDA9D771B5A11E500475985 /* CardInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardInfo.h; sourceTree = "<group>"; };
+		9EDA9D781B5A11E500475985 /* IngNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IngNavigationController.h; sourceTree = "<group>"; };
+		9EDA9D791B5A11E500475985 /* IngSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IngSDK.h; sourceTree = "<group>"; };
+		9EDA9D7A1B5A11E500475985 /* ServiceAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceAPI.h; sourceTree = "<group>"; };
+		9EDA9D7B1B5A11E500475985 /* UserInfor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfor.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,23 +112,9 @@
 		9E1F03DA1B57562A002E2554 /* include */ = {
 			isa = PBXGroup;
 			children = (
-				9E1F03DB1B57562A002E2554 /* InGameSDK */,
+				9EDA9D741B5A11E500475985 /* InGameSDK */,
 			);
 			path = include;
-			sourceTree = "<group>";
-		};
-		9E1F03DB1B57562A002E2554 /* InGameSDK */ = {
-			isa = PBXGroup;
-			children = (
-				9E1F03DC1B57562A002E2554 /* ACTReporter.h */,
-				9E1F03DD1B57562A002E2554 /* AppsFlyerTracker.h */,
-				9E1F03DE1B57562A002E2554 /* CardInfo.h */,
-				9E1F03DF1B57562A002E2554 /* IngNavigationController.h */,
-				9E1F03E01B57562A002E2554 /* IngSDK.h */,
-				9E1F03E11B57562A002E2554 /* ServiceAPI.h */,
-				9E1F03E21B57562A002E2554 /* UserInfor.h */,
-			);
-			path = InGameSDK;
 			sourceTree = "<group>";
 		};
 		9E614F711AE8A7CE002D4CD7 /* FrameWorks */ = {
@@ -208,6 +194,20 @@
 				9EBBA38C1AB2883600A6AD00 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9EDA9D741B5A11E500475985 /* InGameSDK */ = {
+			isa = PBXGroup;
+			children = (
+				9EDA9D751B5A11E500475985 /* ACTReporter.h */,
+				9EDA9D761B5A11E500475985 /* AppsFlyerTracker.h */,
+				9EDA9D771B5A11E500475985 /* CardInfo.h */,
+				9EDA9D781B5A11E500475985 /* IngNavigationController.h */,
+				9EDA9D791B5A11E500475985 /* IngSDK.h */,
+				9EDA9D7A1B5A11E500475985 /* ServiceAPI.h */,
+				9EDA9D7B1B5A11E500475985 /* UserInfor.h */,
+			);
+			path = InGameSDK;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
