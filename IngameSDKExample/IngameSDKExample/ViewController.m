@@ -20,7 +20,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    [[IngSDK getInstance] setRootViewController:self andCallbackURL:@"www.yourcallbackURL.com"];
     [[IngSDK getInstance] startSDK];
     
     //add notification to call back sdk functions

@@ -54,7 +54,8 @@ extern NSString *const onPostFacebookSuccess;
 
 @property (nonatomic, strong) UINavigationController* navigationController;
 
-- (void) setRootViewController:(UIViewController*) rootView andCallbackURL:(NSString*) callbackURL;
+//- (void) setRootViewController:(UIViewController*) rootView andCallbackURL:(NSString*) callbackURL;
+- (void) setRootViewController:(UIViewController*) rootView;
 - (void) startSDK;
 - (void) startSDKWithoutAutoLogin;
 - (void) showPaymentWithOrder:(NSString*) gameOrder;

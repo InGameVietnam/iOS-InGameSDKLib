@@ -13,6 +13,8 @@
 
 }
 
++ (id) getInstance;
+
 - (void) setAppOrientation:(UIInterfaceOrientationMask) orientation;
 
 @end

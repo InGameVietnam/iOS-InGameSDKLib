@@ -43,7 +43,6 @@
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
 - (void)loadView {
 
-    [[IngSDK getInstance] setRootViewController:self andCallbackURL:@"www.GameCallbackURL.com.vn"];
     [[IngSDK getInstance] startSDK];
     
     //add notification to call back sdk functions
