@@ -63,6 +63,7 @@ extern NSString *const onPostFacebookSuccess;
 - (void) logInWithAuto:(BOOL) autoLogin;
 - (void) shareGame;
 - (void) getMoreGame;
+- (void) showUserInfor;
 
 - (void) onAppFlyerTracking;
 
