@@ -24,15 +24,6 @@ extern NSString *const onUserUpdateSuccess;
 
 extern NSString *const onPostFacebookSuccess;
 
-//@protocol IngSDKDelegate <NSObject>
-//
-//@optional
-////- (void) onUserLoginSuccess:(UserInfor*) userInfo;
-////- (void) onUserLogoutSuccess:(UserInfor*) userInfo;
-////- (void) onUserUpdateSuccess:(UserInfor*) userInfo;
-//
-//@end
-
 @interface IngSDK : NSObject <ServiceAPIDelegate,AppsFlyerTrackerDelegate> {
     UIViewController* _RootViewController;
     
@@ -42,19 +33,14 @@ extern NSString *const onPostFacebookSuccess;
     UIViewController* loadingController;
     UIViewController* loginViewController;
     UIViewController* paymentViewController;
-
-    //UserInfor* currentUser;
 }
 
 + (id) getInstance;
-
-//@property (nonatomic, weak) id <IngSDKDelegate> IGDelegate;
 
 @property (strong, nonatomic) UserInfor* currentUser;
 
 @property (nonatomic, strong) UINavigationController* navigationController;
 
-//- (void) setRootViewController:(UIViewController*) rootView andCallbackURL:(NSString*) callbackURL;
 - (void) setRootViewController:(UIViewController*) rootView;
 - (void) startSDK;
 - (void) startSDKWithoutAutoLogin;
