@@ -32,7 +32,7 @@ Browse to **libInGameSDK.a** and add it to project
 ####Add other frameworks that the SDK requires
 
 The SDK depends on the following iOS development frameworks which may not already be part of your project:
-
+* AdSupport
 * MessageUI
 * FacebookSDK
 * MobileCoreServices
@@ -84,97 +84,168 @@ Replace or add this code to our **Appdelegate** on function **onpenURL**
 
 ##How to init the SDK
 
+Open **AppInfor.plist** in **INGResources.bundle** and replace right information at here. Please contact to the supporter to get right infomation.
+
+![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame/add1_zps9wris7nu.png)
+
 In project navigation choose **AppController.mm**
 
-![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame%20iOS/ios-cocos2dx-07_zpsdbgcfq0f.png)
+**Import IngameSDK**
+```sh
+#import "include/InGameSDK/IngSDK.h"
+#import "include/InGameSDK/IngNavigationController.h"
+```
+And after that init IngameSDK on **didFinishLaunchingWithOptions** function
+```sh
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
 
-First Import **SDKViewcontroller** of IngameSDK
-```sh
-#import "SDKViewController.h"
+    cocos2d::Application *app = cocos2d::Application::getInstance();
+    app->initGLContextAttrs();
+    cocos2d::GLViewImpl::convertAttrs();
+    // Add the view controller's view to the window and display.
+    window = [[UIWindow alloc] initWithFrame: [[UIScreen mainScreen] bounds]];
+
+    // Init the CCEAGLView
+    CCEAGLView *eaglView = [CCEAGLView viewWithFrame: [window bounds]
+                                         pixelFormat: (NSString*)cocos2d::GLViewImpl::_pixelFormat
+                                         depthFormat: cocos2d::GLViewImpl::_depthFormat
+                                  preserveBackbuffer: NO
+                                          sharegroup: nil
+                                       multiSampling: NO
+                                     numberOfSamples: 0 ];
+    
+    // Enable or disable multiple touches
+    [eaglView setMultipleTouchEnabled:NO];
+
+    // Use RootViewController manage CCEAGLView 
+    _viewController = [[RootViewController alloc] initWithNibName:nil bundle:nil];
+    _viewController.wantsFullScreenLayout = YES;
+    _viewController.view = eaglView;
+    [Supporter setRootViewController:_viewController];
+    IngNavigationController *navigation = [[IngNavigationController alloc]initWithRootViewController:_viewController];
+    //use below code to fix orientation of game screen - remember use UIInterfaceOrientationMask_XXX_
+    //[navigation setAppOrientation:UIInterfaceOrientationMaskLandscapeLeft];
+    [navigation setNavigationBarHidden:YES];
+    window.rootViewController = navigation;
+    [_viewController loadView];
+    
+    [window makeKeyAndVisible];
+    [[UIApplication sharedApplication] setStatusBarHidden:true];
+    // IMPORTANT: Setting the GLView should be done after creating the RootViewController
+    cocos2d::GLView *glview = cocos2d::GLViewImpl::createWithEAGLView(eaglView);
+    cocos2d::Director::getInstance()->setOpenGLView(glview);
+    app->run();
+    return YES;
+}
 ```
-And after init IngameSDK on **didFinishLaunchingWithOptions** function
+![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame/add5_zpskawvxqcx.png)
+
+>In normally, Ingame SDK will be auto detect game screen orientation and fix the Ingame SDK UI for this orientation, but sometime (perhaps because the game engine) Ingame SDK cannot get right game screen orientation, in this case you will hard code to set right rotation of game screen. you can see above code:
 ```sh
-//init ingame SDK on rootviewcontroller
-SDKViewController *sdkIngame = [[SDKViewController getInstance] initWithMainView:self];
-//set your callback url
-[sdkIngame setGameCallbackURL:@"www.example.YourCallbackURL.com"];
+[navigation setAppOrientation:UIInterfaceOrientationMaskLandscapeLeft];
 ```
-![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame%20iOS/ios-cocos2dx-081_zpsu7s4e7vq.png)
+##Start SDK in your project
+You will call function **startSDK** just one when app or game started or loaded
+
+For Example: I start SDK when loadView function
+
+![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame/add6_zpssiehevzn.png)
 
 ##Rebuild your project
 
 Rebuild and run your project. You'll see after screen, you did init success ingameSDK. If not, please contact IngameSDK developer team to get Support
 
-![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame%20iOS/ios-cocos2dx-09_zpscfwskehl.png)
+![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame/3_zpswhknm0j4.png)
 
-##Make payment on your Game
+##Make payment on your Application
 
 Add this code when you will call to payment of Ingame SDK
 ```sh
-[[SDKViewController getInstance] showPaymentWithOrder:@"YourGameOrderID"];
+[[IngSDK getInstance] showPaymentWithOrder:@"GameOrderID"];
 ```
 Example:
 ```sh
 - (IBAction)onPayment:(id)sender {
-    [[SDKViewController getInstance] showPaymentWithOrder:@"YourGameOrderID"];
+    [[IngSDK getInstance] showPaymentWithOrder:@"12345"];
 }
 ```
-![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame%20iOS/ios-cocos2dx-11_zpsuebpnbqw.png)
+![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame/4_zpsmcecgsom.png)
 
-##IngameSKDDelegate implementation
+##Ingame SDK callbacks functions
 
-To register for Ingame SDK events, set the delegate property on a Viewcontroller to an object that implements the **IGDelegate** protocol. Generally, the class that implements Ingame SDK will also act as the delegate class, in which case the delegate property can be set to **self** or a **viewController**.
+To register for Ingame SDK events, add **notifications** on a **Viewcontroller** (gameRootViewController) when it init or loaded
+
+In this case you can see i add it in **viewDidLoad** function of **Viewcontroller** 
+```sh
+[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onUserLoginSuccess:) name:onUserLoginSuccess object:nil];
+[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onUserLogoutSuccess:) name:onUserLogoutSuccess object:nil];
+[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onUserUpdateSuccess:) name:onUserUpdateSuccess object:nil];
+    
+[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onPostFacebookSuccess:) name:onPostFacebookSuccess object:nil];
+```
+![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame/add3_zpskmtne9kq.png)
+
+And affter that, create callback functions:
+```sh
+#pragma IngameSDK Notifications
+- (void) onUserLoginSuccess:(NSNotification *) NotifiUserInfo {
+    NSString* username = [NotifiUserInfo.userInfo objectForKey:IGUserNameKey];
+    NSNumber* userid = [NotifiUserInfo.userInfo objectForKey:IGUserIdKey];
+    NSString* useraccesstoken = [NotifiUserInfo.userInfo objectForKey:IGUserAccessTokenKey];
+    
+    NSLog(@"Main view callback Login User:%@ and UserID is :%d and accesstoken: %@",username,[userid intValue],useraccesstoken);
+}
+
+- (void) onUserLogoutSuccess:(NSNotification *) NotifiUserInfo {
+    NSString* username = [NotifiUserInfo.userInfo objectForKey:IGUserNameKey];
+    NSNumber* userid = [NotifiUserInfo.userInfo objectForKey:IGUserIdKey];
+    NSString* useraccesstoken = [NotifiUserInfo.userInfo objectForKey:IGUserAccessTokenKey];
+    
+    NSLog(@"Main view callback Logout User:%@ is and UserID is :%d and accesstoken: %@",username,[userid intValue],useraccesstoken);
+}
+
+- (void) onUserUpdateSuccess:(NSNotification *) NotifiUserInfo {
+    NSString* username = [NotifiUserInfo.userInfo objectForKey:IGUserNameKey];
+    NSNumber* userid = [NotifiUserInfo.userInfo objectForKey:IGUserIdKey];
+    NSString* useraccesstoken = [NotifiUserInfo.userInfo objectForKey:IGUserAccessTokenKey];
+    
+    NSLog(@"Main view callback Update User:%@ is and UserID is :%d and accesstoken: %@",username,[userid intValue],useraccesstoken);
+}
+
+- (void) onPostFacebookSuccess:(NSNotification *) NotifiUserInfo {
+    NSMutableArray* friends = [NotifiUserInfo.userInfo objectForKey:IGFriendsKey];
+    
+    NSLog(@"Main view callback post succcess with number of friends %d", (int)friends.count);
+}
+```
+![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame/add6_zpssiehevzn.png)
+
+##Call Function from game without use IngSDK Button
+Normally, user can open more games, share game or logout account with their friends when they tap on IngSDK Button. But you can call those functions via IngSDK. For example:
 
 ```sh
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    MainView *viewController = [[MainView alloc] initWithNibName:@"MainView" bundle:nil];
-    //UINavigationController *navigation = [[UINavigationController alloc]initWithRootViewController:viewController];
-    self.window.rootViewController = viewController;
-    
-    SDKViewController *sdkIngame = [[SDKViewController getInstance] initWithMainView:viewController];
-    [sdkIngame setGameCallbackURL:@"www.yourCallbackURL.example.com"];
-    // set a delegate for callbacks
-    sdkIngame.IGDelegate = viewController;
-    
-    [self.window makeKeyAndVisible];
-    return YES;
-}
-```
-```sh
-@interface MainView : UIViewController <IngameSDKDelegate>
-
-@end
-```
-
-####The last
-#####Hide status bar
-Add **View controller-based status bar appearance** with value **NO** to our **infor.plist** file
-
-![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame%20iOS/ios-quickstart-19_zpsvb6b0vi7.png)
-
-
-###Implementing login, logout events
-
-Each of the methods in IGDelegate are marked as optional, so you only need to implement the methods you want. This example implements each method and logs a message to the console.
-```sh
-- (void) onUserLoginSuccess:(UserInfor *)userInfo {
-    NSLog(@"Main view callback User:%@ is Login",[userInfo getUserName]);
+- (IBAction)onTapLogout:(id)sender {
+    [[IngSDK getInstance] logOut];
 }
 
-- (void) onUserLogoutSuccess:(UserInfor *)userInfo {
-    NSLog(@"Main view callback User:%@ is Logout",[userInfo getUserName]);
+- (IBAction)onTapLogin:(id)sender {
+    [[IngSDK getInstance] logIn];
 }
+
+- (IBAction)onTapShare:(id)sender {
+    [[IngSDK getInstance] shareGame];
+}
+
+- (IBAction)onTapMoregame:(id)sender {
+    [[IngSDK getInstance] getMoreGame];
+}
+
+- (IBAction)onTapUserInfo:(id)sender {
+    [[IngSDK getInstance] showUserInfo];
+}
+
 ```
->Through the **userInfo** variable you can get account information by calling the following functions:<br/>
-userInfo.getUserName(): Username<br/>
-userInfo.getUserId(): Account ID<br/>
-userInfo.getAccessToken(): Access token<br/>
-userInfo.getEmail(): Email<br/>
-userInfo.getPhone(): Phone number<br/>
+
 
 License
 ----
