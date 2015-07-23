@@ -18,24 +18,13 @@ If you don't already have the Ingame Mobile SDK, grab it from the [downloads pag
 
 The first copy the library folder to your ios project navigation
 
-![add](IMG_1)
-
-The second go to **IngameSDKExampleUnity project navigation** right click on Classes group and choose **Add Files to IngameSDKExampleUnity**
-
-![add](IMG_2)
-
-After that, choose IngameSDK path and click add to unity project (remember choose **create groups** option in **Added folder**
-
-![add](IMG_3)
-
-Result:
-
-![add](IMG_4)
+![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame/add7_zpssoqsywl6.png)
 
 ####Add other frameworks that the SDK requires
 
 The SDK depends on the following iOS development frameworks which may not already be part of your project:
 
+* AdSupport
 * MessageUI
 * FacebookSDK
 * MobileCoreServices
@@ -87,16 +76,26 @@ In project navigation choose **UnityAppController.h** import Ingame SDK
 #import "IngNavigationController.h"
 #import <FacebookSDK/FacebookSDK.h>
 ```
-![add](IMG_5)
-
-Next go to **UnityAppController+ViewHandling** in **project navigation > classes > UI**
-Import **IngSDK.h** and implement **IngSDKDelegate**
-
-![add](IMG_6)
+![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame/add8_zpsfj6eyjfv.png)
 
 Because Ingame SDK use navigation controller, you must be change the default init _rootViewcontroller of Unity iOS project :
 
-![add](IMG_7)
+![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame/add9_zpsgqyppngd.png)
+
+You can see i replace **_window.rootViewController = _rootController** to 
+```sh
+_navigationController = [[IngNavigationController alloc] initWithRootViewController:_rootController];
+_window.rootViewController = _navigationController;
+```
+on **showGameUI** function
+
+And because unity change many viewcontroller before load game you must be get last _rootController and and set it for SDK init, i set it in **UnityAppController >> transitionToViewController** function:
+
+![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame/add10_zpslxavjhdx.png)
+
+##Start Ingame SDK
+
+![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame/add11_zpsro5czjm8.png)
 
 ##Rebuild your project
 
@@ -113,42 +112,92 @@ Add this code when you will call to payment of Ingame SDK
 Example:
 ```sh
 - (IBAction)onPayment:(id)sender {
-   [[IngSDK getInstance] showPaymentWithOrder:@"GameOrderID"];
+    [[IngSDK getInstance] showPaymentWithOrder:@"12345"];
 }
 ```
 ![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame/4_zpsmcecgsom.png)
 
-##IngameSKDDelegate implementation
+##Ingame SDK callbacks functions
 
-To register for Ingame SDK events, set the delegate property on a Viewcontroller to an object that implements the **IGDelegate** protocol. Generally, the class that implements Ingame SDK will also act as the delegate class, in which case the delegate property can be set to **self** or a **viewController**.
+To register for Ingame SDK events, add **notifications** on a **Viewcontroller** (gameRootViewController) when it init or loaded
 
-And affter implement delegate of Ingame SDK int **gameRootViewController**
-
+In this case you can see i add it in **startUnity** function of **UnityAppController** 
 ```sh
-@interface MainView : UIViewController <IngameSDKDelegate>
-
-@end
+[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onUserLoginSuccess:) name:onUserLoginSuccess object:nil];
+[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onUserLogoutSuccess:) name:onUserLogoutSuccess object:nil];
+[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onUserUpdateSuccess:) name:onUserUpdateSuccess object:nil];
+    
+[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onPostFacebookSuccess:) name:onPostFacebookSuccess object:nil];
 ```
-![add](IMG_9)
+![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame/add12_zpswpdt6s4w.png)
 
-###Implementing login, logout events
-
-Each of the methods in IngSDKDelegate are marked as optional, so you only need to implement the methods you want. This example implements each method and logs a message to the console.
+And affter that, create callback functions:
 ```sh
-- (void) onUserLoginSuccess:(UserInfor *)userInfo {
-    NSLog(@"Main view callback User:%@ is Login",[userInfo getUserName]);
+#pragma IngameSDK Notifications
+- (void) onUserLoginSuccess:(NSNotification *) NotifiUserInfo {
+    NSString* username = [NotifiUserInfo.userInfo objectForKey:IGUserNameKey];
+    NSNumber* userid = [NotifiUserInfo.userInfo objectForKey:IGUserIdKey];
+    NSString* useraccesstoken = [NotifiUserInfo.userInfo objectForKey:IGUserAccessTokenKey];
+    
+    NSLog(@"Main view callback Login User:%@ and UserID is :%d and accesstoken: %@",username,[userid intValue],useraccesstoken);
 }
 
-- (void) onUserLogoutSuccess:(UserInfor *)userInfo {
-    NSLog(@"Main view callback User:%@ is Logout",[userInfo getUserName]);
+- (void) onUserLogoutSuccess:(NSNotification *) NotifiUserInfo {
+    NSString* username = [NotifiUserInfo.userInfo objectForKey:IGUserNameKey];
+    NSNumber* userid = [NotifiUserInfo.userInfo objectForKey:IGUserIdKey];
+    NSString* useraccesstoken = [NotifiUserInfo.userInfo objectForKey:IGUserAccessTokenKey];
+    
+    NSLog(@"Main view callback Logout User:%@ is and UserID is :%d and accesstoken: %@",username,[userid intValue],useraccesstoken);
+}
+
+- (void) onUserUpdateSuccess:(NSNotification *) NotifiUserInfo {
+    NSString* username = [NotifiUserInfo.userInfo objectForKey:IGUserNameKey];
+    NSNumber* userid = [NotifiUserInfo.userInfo objectForKey:IGUserIdKey];
+    NSString* useraccesstoken = [NotifiUserInfo.userInfo objectForKey:IGUserAccessTokenKey];
+    
+    NSLog(@"Main view callback Update User:%@ is and UserID is :%d and accesstoken: %@",username,[userid intValue],useraccesstoken);
+}
+
+- (void) onPostFacebookSuccess:(NSNotification *) NotifiUserInfo {
+    NSMutableArray* friends = [NotifiUserInfo.userInfo objectForKey:IGFriendsKey];
+    
+    NSLog(@"Main view callback post succcess with number of friends %d", (int)friends.count);
 }
 ```
->Through the **userInfo** variable you can get account information by calling the following functions:<br/>
-userInfo.username: Username<br/>
-userInfo.userId: Account ID<br/>
-userInfo.access_token: Access token<br/>
-userInfo.email: Email<br/>
-userInfo.phone: Phone number<br/>
+![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame/add4_zps8hl7ptch.png)
+
+##Call Function from game without use IngSDK Button
+Normally, user can open more games, share game or logout account with their friends when they tap on IngSDK Button. But you can call those functions via IngSDK. For example:
+
+```sh
+- (IBAction)onTapLogout:(id)sender {
+    [[IngSDK getInstance] logOut];
+}
+
+- (IBAction)onTapLogin:(id)sender {
+    [[IngSDK getInstance] logIn];
+}
+
+- (IBAction)onTapShare:(id)sender {
+    [[IngSDK getInstance] shareGame];
+}
+
+- (IBAction)onTapMoregame:(id)sender {
+    [[IngSDK getInstance] getMoreGame];
+}
+
+- (IBAction)onTapUserInfo:(id)sender {
+    [[IngSDK getInstance] showUserInfo];
+}
+
+```
+
+##Start Appflyer Tracking
+
+Go to **AppDelegate > applicationDidBecomeActive** function
+
+![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame/add13_zpssmorxeix.png)
+
 
 License
 ----

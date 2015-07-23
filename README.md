@@ -267,6 +267,13 @@ Normally, user can open more games, share game or logout account with their frie
 
 ```
 
+##Start Appflyer Tracking
+
+Go to **AppDelegate > applicationDidBecomeActive** function
+
+![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame/add13_zpssmorxeix.png)
+
+
 
 License
 ----
