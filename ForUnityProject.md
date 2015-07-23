@@ -12,7 +12,7 @@ This tutorial shows you how to include the Ingame Mobile SDK to unity project. y
 ##Adding the SDK to your Unity project
 The first time you must have a unity project. my unity project name is **IngameSDKExampleUnity**.
 ###Using the SDK download
-If you don't already have the Ingame Mobile SDK, grab it from the [downloads page](https://github.com/InGameVietnam/iOS-InGameSDKLib/archive/master.zip) and unzip it.
+If you don't already have the Ingame Mobile SDK, grab it from the [downloads page](https://github.com/InGameVietnam/iOS-InGameSDKLib/archive/version-2.0.zip) and unzip it.
 
 ####Add the library
 

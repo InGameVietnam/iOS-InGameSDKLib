@@ -12,7 +12,7 @@ This tutorial shows you how to include the Ingame Mobile SDK to cocos2dx project
 ##Adding the SDK to your Cocos2d-X project
 The first time you must have a cocos2d-x project. If you don't have, you can [create a new cocos2d-x project](http://www.cocos2d-x.org/wiki/How_to_Start_A_New_Cocos2D-X_Game) and use it to include Ingame Mobile SDK. In this tutorial I create new Cocos2d-x project with name **IngameSDKExampleCocos2dx**.
 ###Using the SDK download
-If you don't already have the Ingame Mobile SDK, grab it from the [downloads page](https://github.com/InGameVietnam/iOS-InGameSDKLib/archive/master.zip) and unzip it.
+If you don't already have the Ingame Mobile SDK, grab it from the [downloads page](https://github.com/InGameVietnam/iOS-InGameSDKLib/archive/version-2.0.zip) and unzip it.
 
 ####Add the library
 

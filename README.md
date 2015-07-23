@@ -38,7 +38,7 @@ To use a simulator, navigate to **Product > Destination** and select an iPhone s
 
 ###Using the SDK download
 
-If you don't already have the Ingame Mobile SDK, grab it from the [downloads page](https://github.com/InGameVietnam/iOS-InGameSDKLib/archive/master.zip) and unzip it.
+If you don't already have the Ingame Mobile SDK, grab it from the [downloads page](https://github.com/InGameVietnam/iOS-InGameSDKLib/archive/version-2.0.zip) and unzip it.
 
 ####Add Library
 
