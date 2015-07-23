@@ -39,7 +39,6 @@ To use a simulator, navigate to **Product > Destination** and select an iPhone s
 ###Using the SDK download
 
 If you don't already have the Ingame Mobile SDK, grab it from the [downloads page](https://github.com/InGameVietnam/iOS-InGameSDKLib/archive/master.zip) and unzip it.
- and unzip it.
 
 ####Add Library
 
@@ -61,6 +60,7 @@ Browse to **libInGameSDK.a** and add it to project
 
 The SDK depends on the following iOS development frameworks which may not already be part of your project:
 
+* AdSupport
 * MessageUI
 * FacebookSDK
 * MobileCoreServices
@@ -132,7 +132,7 @@ Replace or add this code to our **Appdelegate** on function **onpenURL**
 
 Open **AppInfor.plist** in **INGResources.bundle** and replace right information at here. Please contact to the supporter to get right infomation.
 
-![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame/1_zpssjo2auqe.png)
+![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame/add1_zps9wris7nu.png)
 
 In project navigation choose **Appdelegate.m**
 
@@ -153,23 +153,24 @@ and after that init IngameSDK on **didFinishLaunchingWithOptions** function
     IngNavigationController *navigation = [[IngNavigationController alloc]initWithRootViewController:gameViewController];
     //[navigation setAppOrientation:UIInterfaceOrientationMaskLandscapeLeft];
     self.window.rootViewController = navigation;
-    
     [navigation setNavigationBarHidden:YES];
     
-    [[IngSDK getInstance] setRootViewController:gameViewController andCallbackURL:@"www.gameURLCallback.com"];
-    [[IngSDK getInstance] startSDK];
-    [[IngSDK getInstance] setIGDelegate:gameViewController];
-
     [self.window makeKeyAndVisible];
     return YES;
 }
 ```
-![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame/2_zpswnxpcra2.png)
+![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame/add2_zpsd5duyryr.png)
 
 >In normally, Ingame SDK will be auto detect game screen orientation and fix the Ingame SDK UI for this orientation, but sometime (perhaps because the game engine) Ingame SDK cannot get right game screen orientation, in this case you will hard code to set right rotation of game screen. you can see above code:
 ```sh
 [navigation setAppOrientation:UIInterfaceOrientationMaskLandscapeLeft];
 ```
+##Start SDK in your project
+You will call function **startSDK** just one when app or game started or loaded
+
+For Example: I start SDK when viewDidLoad function
+
+![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame/add3_zpskmtne9kq.png)
 
 ##Rebuild your project
 
@@ -191,41 +192,54 @@ Example:
 ```
 ![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame/4_zpsmcecgsom.png)
 
-##Ingame SDK Delegate methods implementation
+##Ingame SDK callbacks functions
 
-To register for Ingame SDK events, set the delegate property on a Viewcontroller (gameRootViewController) to an object that implements the **IngSDKDelegate** protocol. Generally, the class that implements Ingame SDK will also act as the delegate class, in which case the delegate property can be set to **self** or a **viewController**.
+To register for Ingame SDK events, add **notifications** on a **Viewcontroller** (gameRootViewController) when it init or loaded
 
-In this case you can see i set **IGDelegate** on **didFinishLaunchingWithOptions** 
-function when i init IngSDK.
+In this case you can see i add it in **viewDidLoad** function of **Viewcontroller** 
 ```sh
-[[IngSDK getInstance] setIGDelegate:gameViewController];
+[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onUserLoginSuccess:) name:onUserLoginSuccess object:nil];
+[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onUserLogoutSuccess:) name:onUserLogoutSuccess object:nil];
+[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onUserUpdateSuccess:) name:onUserUpdateSuccess object:nil];
+    
+[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onPostFacebookSuccess:) name:onPostFacebookSuccess object:nil];
 ```
-And Implement on Viewcontroller:
+![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame/add3_zpskmtne9kq.png)
 
+And affter that, create callback functions:
 ```sh
-@interface MainView : UIViewController <IngSDKDelegate>
-
-@end
-```
-
-###Implementing login, logout events
-
-Each of the methods in IGDelegate are marked as optional, so you only need to implement the methods you want. This example implements each method and logs a message to the console.
-```sh
-- (void) onUserLoginSuccess:(UserInfor *)userInfo {
-    NSLog(@"Main view callback User:%@ is Login",[userInfo getUserName]);
+#pragma IngameSDK Notifications
+- (void) onUserLoginSuccess:(NSNotification *) NotifiUserInfo {
+    NSString* username = [NotifiUserInfo.userInfo objectForKey:IGUserNameKey];
+    NSNumber* userid = [NotifiUserInfo.userInfo objectForKey:IGUserIdKey];
+    NSString* useraccesstoken = [NotifiUserInfo.userInfo objectForKey:IGUserAccessTokenKey];
+    
+    NSLog(@"Main view callback Login User:%@ and UserID is :%d and accesstoken: %@",username,[userid intValue],useraccesstoken);
 }
 
-- (void) onUserLogoutSuccess:(UserInfor *)userInfo {
-    NSLog(@"Main view callback User:%@ is Logout",[userInfo getUserName]);
+- (void) onUserLogoutSuccess:(NSNotification *) NotifiUserInfo {
+    NSString* username = [NotifiUserInfo.userInfo objectForKey:IGUserNameKey];
+    NSNumber* userid = [NotifiUserInfo.userInfo objectForKey:IGUserIdKey];
+    NSString* useraccesstoken = [NotifiUserInfo.userInfo objectForKey:IGUserAccessTokenKey];
+    
+    NSLog(@"Main view callback Logout User:%@ is and UserID is :%d and accesstoken: %@",username,[userid intValue],useraccesstoken);
+}
+
+- (void) onUserUpdateSuccess:(NSNotification *) NotifiUserInfo {
+    NSString* username = [NotifiUserInfo.userInfo objectForKey:IGUserNameKey];
+    NSNumber* userid = [NotifiUserInfo.userInfo objectForKey:IGUserIdKey];
+    NSString* useraccesstoken = [NotifiUserInfo.userInfo objectForKey:IGUserAccessTokenKey];
+    
+    NSLog(@"Main view callback Update User:%@ is and UserID is :%d and accesstoken: %@",username,[userid intValue],useraccesstoken);
+}
+
+- (void) onPostFacebookSuccess:(NSNotification *) NotifiUserInfo {
+    NSMutableArray* friends = [NotifiUserInfo.userInfo objectForKey:IGFriendsKey];
+    
+    NSLog(@"Main view callback post succcess with number of friends %d", (int)friends.count);
 }
 ```
->Through the **userInfo** variable you can get account information by calling the following functions:<br/>
-userInfo.getUserName(): Username<br/>
-userInfo.getUserId(): Account ID<br/>
-userInfo.getAccessToken(): Access token<br/>
-userInfo.getEmail(): Email<br/>
-userInfo.getPhone(): Phone number<br/>
+![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame/add4_zps8hl7ptch.png)
 
 ##Call Function from game without use IngSDK Button
 Normally, user can open more games, share game or logout account with their friends when they tap on IngSDK Button. But you can call those functions via IngSDK. For example:
@@ -245,6 +259,10 @@ Normally, user can open more games, share game or logout account with their frie
 
 - (IBAction)onTapMoregame:(id)sender {
     [[IngSDK getInstance] getMoreGame];
+}
+
+- (IBAction)onTapUserInfo:(id)sender {
+    [[IngSDK getInstance] showUserInfo];
 }
 
 ```
