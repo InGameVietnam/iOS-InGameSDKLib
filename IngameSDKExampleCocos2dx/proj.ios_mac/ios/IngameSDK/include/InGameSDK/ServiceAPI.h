@@ -15,7 +15,7 @@
 @required
 - (void) showLoading;
 - (void) hideLoading;
-- (void) closeWithErrors;
+- (void) closeWithErrors:(int) error_code;
 
 @optional
 - (void) showCaptcha;
