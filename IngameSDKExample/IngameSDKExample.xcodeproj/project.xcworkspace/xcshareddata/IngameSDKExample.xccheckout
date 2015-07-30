@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>6DDA5AF7-D392-4B2A-B39C-96CA5836EB07</string>
 	<key>IDESourceControlProjectName</key>
-	<string>IngameSDKExample</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>BA057936CE3EBAE29C69D3994D6EC25C6131C332</key>
 		<string>https://github.com/InGameVietnam/iOS-InGameSDKLib.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>IngameSDKExample/IngameSDKExample.xcodeproj</string>
+	<string>IngameSDKExample/IngameSDKExample.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>BA057936CE3EBAE29C69D3994D6EC25C6131C332</key>
