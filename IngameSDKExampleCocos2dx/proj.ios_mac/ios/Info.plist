@@ -60,14 +60,14 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb1430402833918343</string>
+				<string>fb566003250170012</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>FacebookAppID</key>
-	<string>1430402833918343</string>
+	<string>566003250170012</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIAppFonts</key>
