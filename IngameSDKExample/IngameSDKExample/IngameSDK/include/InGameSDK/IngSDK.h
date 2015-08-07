@@ -12,6 +12,7 @@
 #import "ServiceAPI.h"
 //appflyer tracking
 #import "AppsFlyerTracker.h"
+#import "IngNavigationController.h"
 
 #define IGUserNameKey @"username"
 #define IGUserIdKey @"userid"
@@ -33,18 +34,25 @@ extern NSString *const onPostFacebookSuccess;
     UIViewController* loadingController;
     UIViewController* loginViewController;
     UIViewController* paymentViewController;
+    
+    IngNavigationController* _navigationController;
 }
 
 + (id) getInstance;
 
+
 @property (strong, nonatomic) UserInfor* currentUser;
 
-@property (nonatomic, strong) UINavigationController* navigationController;
+//@property (nonatomic, strong) UINavigationController* navigationController;
+
+- (void) setIngNavigationController:(IngNavigationController*) ingNavigationController;
+- (IngNavigationController*) getIngNavigationController;
 
 - (void) setRootViewController:(UIViewController*) rootView;
 - (void) startSDK;
 - (void) startSDKWithoutAutoLogin;
 - (void) showPaymentWithOrder:(NSString*) gameOrder;
+- (void) showPaymentWithOrder:(NSString*) gameOrder andCallbackURL:(NSString*) callbackURL;
 - (void) logOut;
 - (void) logInWithAuto:(BOOL) autoLogin;
 - (void) shareGame;

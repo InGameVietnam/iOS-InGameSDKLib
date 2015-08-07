@@ -78,16 +78,13 @@ In project navigation choose **UnityAppController.h** import Ingame SDK
 ```
 ![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame/add8_zpsfj6eyjfv.png)
 
+And after that, **IngameNavigationController** will be init at **createViewHierarchyImpl** of **UnityAppController+ViewHandling.mm**
+
+![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame/add1_zps45kdmqcj.png)
+
 Because Ingame SDK use navigation controller, you must be change the default init _rootViewcontroller of Unity iOS project :
 
-![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame/add9_zpsgqyppngd.png)
-
-You can see i replace **_window.rootViewController = _rootController** to 
-```sh
-_navigationController = [[IngNavigationController alloc] initWithRootViewController:_rootController];
-_window.rootViewController = _navigationController;
-```
-on **showGameUI** function
+![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame/add2_zpsqp1lp1li.png)
 
 And because unity change many viewcontroller before load game you must be get last _rootController and and set it for SDK init, i set it in **UnityAppController >> transitionToViewController** function:
 
@@ -97,9 +94,37 @@ And because unity change many viewcontroller before load game you must be get la
 
 ![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame/add11_zpsro5czjm8.png)
 
+>Have two function you can start ingameSDK (**startSDK** and **startSDKWithoutAutoLogin**). **startSDK** function will be call sdk start and it will be login if user had been login earlier. You will call **startSDKWithoutAutoLogin** if you want user must be login when start game.
+
+##When I Start Ingame SDK
+
+**startIngameSDK** can put anywhere you want. but my suggestion you put it in **UnityAppController.mm** and call it when game load game and assets succeeded. For example:
+
+Declare a internal function, and define it in c code, like this
+```sh
+//in c# code
+    [DllImport("__Internal")]
+    private static extern void _DoIOSLogin();
+```
+And in C code
+```sh
+//in c code
+	void _DoIOSLogin()
+	{
+        [(UnityAppController*)[UIApplication sharedApplication].delegate ShowSDK];
+	}
+```
+
+Or you can create a new static class in objectC and call it:
+```sh
+EXTERN_API_C(void _ingame_doSdkLogin());
+EXTERN_API_C(void _ingame_doSdkLogout());
+EXTERN_API_C(void _ingame_doSdkBuy(char* orderName));
+```
+
 ##Rebuild your project
 
-Rebuild and run your project. You'll see after screen, you did init success ingameSDK. If not, please contact IngameSDK developer team to get Support
+Rebuild and run your project. You'll see after screen, you did init success ingameSDK. If not, please contact IngameSDK developer team to get supports
 
 ![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame/3_zpswhknm0j4.png)
 
