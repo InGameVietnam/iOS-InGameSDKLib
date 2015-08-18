@@ -20,6 +20,7 @@
 #define IGFriendsKey @"friends"
 
 extern NSString *const onUserLoginSuccess;
+extern NSString *const onUserLoginFail;
 extern NSString *const onUserLogoutSuccess;
 extern NSString *const onUserUpdateSuccess;
 
