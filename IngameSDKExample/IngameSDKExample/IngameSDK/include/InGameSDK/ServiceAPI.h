@@ -89,7 +89,7 @@
 - (void) requestGetConfigWithUserInfo:(UserInfor*) userinfo;
 - (void) requestCardPaymentWithCardinfo:(CardInfo*) card ofUser:(UserInfor*) user andGameOrder:(NSString*) gameOrder;
 - (void) requestBankPaymentWithAmount:(NSString*) amount ofUser:(UserInfor*) user andGameOrder:(NSString*) gameOrder;
-- (void) requestApplePaymentWithReceipt:(NSString*) recept andPassword:(NSString*) password ofUser:(UserInfor*) user forProductId:(NSString*)productId andGameOrder:(NSString*) gameOrder;
+- (void) requestApplePaymentWithReceipt:(NSString*) receipt andPassword:(NSString*) password ofUser:(UserInfor*) user forProductId:(NSString*)productId andGameOrder:(NSString*) gameOrder;
 - (void) requestBankPaymentConfirmWithTransactionReceipt:(NSString *)receipt ofUser:(UserInfor*) user;
 - (void) requestMoreGame;
 - (void) requestShareGame;
