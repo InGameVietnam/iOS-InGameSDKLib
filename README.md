@@ -275,7 +275,7 @@ Go to **AppDelegate > applicationDidBecomeActive** function
 
 And config two value from AppInfo.plist file:
 
-![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame/add13_zpssmorxeix.png)
+![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame%20iOS/Screen%20Shot%202015-09-17%20at%2010.04.09%20AM_zps8xqfxi1m.png)
 
 - APPLE_APP_ID: this is apple app id from itunes connect
 - APPFLYER_DEV_ID: this is appflyer dev id. you can get more information at (Appflyer Document)[https://support.appsflyer.com/entries/25458906-iOS-SDK-Integration-Guide-v3-3-x-New-API-]
