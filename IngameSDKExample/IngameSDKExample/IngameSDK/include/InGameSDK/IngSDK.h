@@ -26,6 +26,8 @@ extern NSString *const onUserUpdateSuccess;
 
 extern NSString *const onPostFacebookSuccess;
 
+extern NSString *const onTapScreenNotification;
+
 @interface IngSDK : NSObject <ServiceAPIDelegate,AppsFlyerTrackerDelegate> {
     UIViewController* _RootViewController;
     
@@ -37,6 +39,8 @@ extern NSString *const onPostFacebookSuccess;
     UIViewController* paymentViewController;
     
     IngNavigationController* _navigationController;
+    
+    BOOL willAutoLogin;
 }
 
 + (id) getInstance;
