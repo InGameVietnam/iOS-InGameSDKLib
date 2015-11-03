@@ -184,6 +184,12 @@ Add this code when you will call to payment of Ingame SDK
 ```sh
 [[IngSDK getInstance] showPaymentWithOrder:@"GameOrderID"];
 ```
+or 
+```sh
+[[IngSDK getInstance] showPaymentWithOrder:@"GameOrderID" andCallbackURL:@"yourCallbackURL"];
+```
+
+
 Example:
 ```sh
 - (IBAction)onPayment:(id)sender {
