@@ -62,13 +62,18 @@ The SDK depends on the following iOS development frameworks which may not alread
 
 * AdSupport
 * MessageUI
-* FacebookSDK
 * MobileCoreServices
 * libz.dylib
 * SystemConfiguration
 * CFNetwork
 * StoreKit
 * Security
+
+The others (facebook framework):
+
+* FBSDKShareKit.framework
+* FBSDKLoginKit.framework
+* FBSDKCoreKit.framework
 
 ####Add IngameSDK Resources to project
 
@@ -102,29 +107,108 @@ In project navigation goto **Project target > Build Settings Tab > Linking** and
 ![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame/Screen%20Shot%202015-07-06%20at%205.11.32%20PM_zpsjnuvxqnl.png)
 
 ####Init Facebook Login:
-You need make sure **Facebook App ID**, **Facebook Display Name** and **URLSchemes**- Added your app's **.plist** file.
 
->You can [Getting Start Facebook for IOS](https://developers.facebook.com/docs/ios/getting-started) to get Infomation about how to Create a Facebook App and configure an Xcode project
->![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame%20iOS/ios-quickstart-15_zpsyrunzsrb.png)
->Add a **URL types** with **URLSchemes**
->![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame%20iOS/ios-quickstart-16_zpsedr73t0o.png)
+**1. Configure Xcode Project**
 
-Replace or add this code to our **Appdelegate** on function **onpenURL**
-```sh
-//INGAMGE this code will be implement at client appdelegate
-// In order to process the response you get from interacting with the Facebook login process,
-// you need to override application:openURL:sourceApplication:annotation:
-- (BOOL)application:(UIApplication *)application
-            openURL:(NSURL *)url
-  sourceApplication:(NSString *)sourceApplication
-         annotation:(id)annotation {
-    
-    // Call FBAppCall's handleOpenURL:sourceApplication to handle Facebook app responses
-    BOOL wasHandled = [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
-    
-    // You can add your app-specific url handling code here if needed
-    
-    return wasHandled;
+Now configure the .plist for your project:
+
+- Pick your app via the app selector below.
+- In Xcode right-click your .plist file and choose "Open As Source Code".
+- Copy & Paste the XML snippet into the body of your file (<dict>...</dict>).
+```objc
+<key>CFBundleURLTypes</key>
+<array>
+  <dict>
+    <key>CFBundleURLSchemes</key>
+    <array>
+      <string>fb(The Game Facebook Id)</string>
+    </array>
+  </dict>
+</array>
+<key>FacebookAppID</key>
+<string>(The game Facebook Id)</string>
+<key>FacebookDisplayName</key>
+<string>(The Game Name)</string>
+```
+```objc
+<key>NSAppTransportSecurity</key>
+<dict>
+  <key>NSExceptionDomains</key>
+  <dict>
+    <key>facebook.com</key>
+    <dict>
+      <key>NSIncludesSubdomains</key> <true/>        
+      <key>NSThirdPartyExceptionRequiresForwardSecrecy</key> <false/>
+    </dict>
+    <key>fbcdn.net</key>
+    <dict>
+      <key>NSIncludesSubdomains</key> <true/>
+      <key>NSThirdPartyExceptionRequiresForwardSecrecy</key>  <false/>
+    </dict>
+    <key>akamaihd.net</key>
+    <dict>
+      <key>NSIncludesSubdomains</key> <true/>
+      <key>NSThirdPartyExceptionRequiresForwardSecrecy</key> <false/>
+    </dict>
+  </dict>
+</dict>
+```
+
+```objc
+<key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>fbapi</string>
+        <string>fbapi20130214</string>
+        <string>fbapi20130410</string>
+        <string>fbapi20130702</string>
+        <string>fbapi20131010</string>
+        <string>fbapi20131219</string>
+        <string>fbapi20140410</string>
+        <string>fbapi20140116</string>
+        <string>fbapi20150313</string>
+        <string>fbapi20150629</string>
+        <string>fbauth</string>
+        <string>fbauth2</string>
+        <string>fb</string>
+        <string>fb-messenger-api20140430</string>
+        <string>fb-messenger-platform-20150128</string>
+        <string>fb-messenger-platform-20150218</string>
+        <string>fb-messenger-platform-20150305</string>
+        <string>fb-messenger-api</string>
+        <string>fbshareextension</string>
+    </array>
+```
+
+**2. Connect Application Delegate**
+
+To post process the results from Facebook Login or Facebook Dialogs (or any action that requires switching over to the native Facebook app or Safari) you need to conenct your **AppDelegate** to the **FBSDKApplicationDelegate**. In your **AppDelegate.m** add:
+```objc
+//  AppDelegate.m
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+  [[FBSDKApplicationDelegate sharedInstance] application:application
+    didFinishLaunchingWithOptions:launchOptions];
+  return YES;
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+  return [[FBSDKApplicationDelegate sharedInstance] application:application
+    openURL:url
+    sourceApplication:sourceApplication
+    annotation:annotation
+  ];
+}
+```
+
+**3. Add App Events and Log App Activations**
+
+The SDK is installed and set up. To do so add the following code snippet to your **AppDelegate.m**:
+```objc
+//  AppDelegate.m
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+  [FBSDKAppEvents activateApp];
 }
 ```
 
@@ -137,12 +221,12 @@ Open **AppInfor.plist** in **INGResources.bundle** and replace right information
 In project navigation choose **Appdelegate.m**
 
 Import IngameSDK
-```sh
+```objc
 #import "include/InGameSDK/IngSDK.h"
 #import "include/InGameSDK/IngNavigationController.h"
 ```
 and after that init IngameSDK on **didFinishLaunchingWithOptions** function
-```sh
+```objc
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -162,7 +246,7 @@ and after that init IngameSDK on **didFinishLaunchingWithOptions** function
 ![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame/add2_zpsd5duyryr.png)
 
 >In normally, Ingame SDK will be auto detect game screen orientation and fix the Ingame SDK UI for this orientation, but sometime (perhaps because the game engine) Ingame SDK cannot get right game screen orientation, in this case you will hard code to set right rotation of game screen. you can see above code:
-```sh
+```objc
 [navigation setAppOrientation:UIInterfaceOrientationMaskLandscapeLeft];
 ```
 ##Start SDK in your project
@@ -181,17 +265,17 @@ Rebuild and run your project. You'll see after screen, you did init success inga
 ##Make payment on your Application
 
 Add this code when you will call to payment of Ingame SDK
-```sh
+```objc
 [[IngSDK getInstance] showPaymentWithOrder:@"GameOrderID"];
 ```
 or 
-```sh
+```objc
 [[IngSDK getInstance] showPaymentWithOrder:@"GameOrderID" andCallbackURL:@"yourCallbackURL"];
 ```
 
 
 Example:
-```sh
+```objc
 - (IBAction)onPayment:(id)sender {
     [[IngSDK getInstance] showPaymentWithOrder:@"12345"];
 }
@@ -203,7 +287,7 @@ Example:
 To register for Ingame SDK events, add **notifications** on a **Viewcontroller** (gameRootViewController) when it init or loaded
 
 In this case you can see i add it in **viewDidLoad** function of **Viewcontroller** 
-```sh
+```objc
 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onUserLoginSuccess:) name:onUserLoginSuccess object:nil];
 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onUserLogoutSuccess:) name:onUserLogoutSuccess object:nil];
 [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onUserUpdateSuccess:) name:onUserUpdateSuccess object:nil];
@@ -213,7 +297,7 @@ In this case you can see i add it in **viewDidLoad** function of **Viewcontrolle
 ![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame/add3_zpskmtne9kq.png)
 
 And affter that, create callback functions:
-```sh
+```objc
 #pragma IngameSDK Notifications
 - (void) onUserLoginSuccess:(NSNotification *) NotifiUserInfo {
     NSString* username = [NotifiUserInfo.userInfo objectForKey:IGUserNameKey];
@@ -250,7 +334,7 @@ And affter that, create callback functions:
 ##Call Function from game without use IngSDK Button
 Normally, user can open more games, share game or logout account with their friends when they tap on IngSDK Button. But you can call those functions via IngSDK. For example:
 
-```sh
+```objc
 - (IBAction)onTapLogout:(id)sender {
     [[IngSDK getInstance] logOut];
 }
@@ -277,7 +361,13 @@ Normally, user can open more games, share game or logout account with their frie
 
 Go to **AppDelegate > applicationDidBecomeActive** function
 
-![add](http://i757.photobucket.com/albums/xx212/ichirokudo/Ingame/add13_zpssmorxeix.png)
+```objc
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    [[IngSDK getInstance] onAppFlyerTracking];
+    
+    [FBSDKAppEvents activateApp];
+}
+```
 
 And config two value from AppInfo.plist file:
 
